@@ -1,0 +1,712 @@
+/* =====================================================
+   SXC HERO — THEME
+   ===================================================== */
+
+.home-page {
+  --home-blue: #1800ff;
+  --home-lime: #c8ff00;
+  --home-white: #ffffff;
+  --home-black: #101010;
+
+  width: 100%;
+  overflow: hidden;
+  color: var(--home-white);
+  background:
+    radial-gradient(
+      ellipse at 75% 45%,
+      rgba(85, 80, 255, 0.22),
+      transparent 45%
+    ),
+    var(--home-blue);
+}
+
+.home-page *,
+.home-page *::before,
+.home-page *::after {
+  box-sizing: border-box;
+}
+
+.text-lime {
+  color: var(--home-lime);
+}
+
+/* =====================================================
+   MAIN LAYOUT — DESKTOP
+   ===================================================== */
+
+.home-hero {
+  position: relative;
+  isolation: isolate;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.92fr);
+  grid-template-areas:
+    "eyebrow visual"
+    "title visual"
+    "description visual"
+    "benefits visual"
+    "actions visual"
+    "tagline tagline";
+
+  align-items: center;
+  column-gap: clamp(1rem, 3vw, 2.8rem);
+
+  width: min(100%, 1440px);
+  margin-inline: auto;
+  padding: clamp(2rem, 4vw, 3.5rem) clamp(1.25rem, 4vw, 3.5rem);
+}
+
+/* =====================================================
+   EYEBROW
+   ===================================================== */
+
+.home-eyebrow {
+  grid-area: eyebrow;
+
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  margin: 0 0 1.5rem;
+
+  font-size: clamp(0.72rem, 1.2vw, 1rem);
+  font-weight: 850;
+  letter-spacing: 0.07em;
+  line-height: 1.5;
+}
+
+.home-eyebrow__line {
+  flex: 0 0 28px;
+  height: 7px;
+  border-radius: 99px;
+  background: var(--home-lime);
+}
+
+/* =====================================================
+   HEADLINE
+   ===================================================== */
+
+.home-hero__title {
+  grid-area: title;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  min-width: 0;
+  margin: 0;
+
+  font-size: clamp(2.9rem, 5.3vw, 5rem);
+  font-weight: 950;
+  letter-spacing: -0.065em;
+  line-height: 0.99;
+}
+
+.home-hero__title > span {
+  display: block;
+  white-space: nowrap;
+}
+
+/* =====================================================
+   CHARACTER AND SPEECH BUBBLE
+   No decorative strokes, sparkles, or glow effects.
+   ===================================================== */
+
+.home-hero__visual {
+  grid-area: visual;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+
+  align-self: stretch;
+  min-width: 0;
+  min-height: 540px;
+  padding-top: 100px;
+}
+
+.home-hero__character {
+  display: block;
+
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  max-width: 470px;
+  max-height: 650px;
+  height: auto;
+
+  margin-inline: auto;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+/* =====================================================
+   SPEECH BUBBLE — REFERENCE-INSPIRED OUTLINE
+   ===================================================== */
+
+.home-speech {
+  position: absolute;
+  z-index: 2;
+
+  top: 1.5%;
+  left: 3%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: min(96%, 450px);
+  min-height: 118px;
+
+  padding: 1.4rem 1.8rem;
+
+  border: 3px solid var(--home-black);
+  border-radius: 30px;
+
+  background: var(--home-white);
+  color: var(--home-black);
+
+  text-align: center;
+}
+
+/* Bubble tail outline */
+
+.home-speech::before {
+  content: "";
+
+  position: absolute;
+  left: 57%;
+  bottom: -25px;
+
+  width: 35px;
+  height: 35px;
+
+  background: var(--home-white);
+  border-right: 3px solid var(--home-black);
+  border-bottom: 3px solid var(--home-black);
+
+  transform: rotate(45deg);
+  border-bottom-right-radius: 3px;
+}
+
+/* Keep the bubble's bottom border clean where the tail joins. */
+
+.home-speech::after {
+  content: "";
+
+  position: absolute;
+  z-index: 3;
+
+  left: calc(57% - 1px);
+  bottom: -2px;
+
+  width: 33px;
+  height: 6px;
+
+  background: var(--home-white);
+}
+
+.home-speech__text {
+  position: relative;
+  z-index: 4;
+
+  display: block;
+  width: 100%;
+
+  font-size: clamp(0.95rem, 1.45vw, 1.25rem);
+  font-weight: 850;
+  line-height: 1.5;
+
+  animation: home-question-in 300ms ease both;
+}
+
+.home-speech__text mark {
+  padding: 0.02em 0.12em;
+  background: var(--home-lime);
+  color: var(--home-black);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* =====================================================
+   DESCRIPTION
+   ===================================================== */
+
+.home-hero__description {
+  grid-area: description;
+
+  width: 100%;
+  max-width: 650px;
+
+  margin: 1.5rem 0 0;
+
+  font-size: clamp(1rem, 1.8vw, 1.35rem);
+  line-height: 1.6;
+}
+
+/* =====================================================
+   BENEFITS
+   ===================================================== */
+
+.home-hero__benefits {
+  grid-area: benefits;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+
+  margin: 1.5rem 0 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.home-hero__benefits li {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  font-size: clamp(0.95rem, 1.5vw, 1.2rem);
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.home-benefit-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+
+  border-radius: 50%;
+  background: var(--home-lime);
+  color: var(--home-black);
+
+  font-size: 1.15rem;
+  font-weight: 950;
+}
+
+/* =====================================================
+   CTA BUTTONS
+   ===================================================== */
+
+.home-hero__actions {
+  grid-area: actions;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+
+  width: 100%;
+  max-width: 640px;
+
+  margin-top: 1.7rem;
+}
+
+.home-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+
+  flex: 1 1 220px;
+  min-height: 56px;
+  padding: 0.9rem 1.2rem;
+
+  border: 2px solid transparent;
+  border-radius: 999px;
+
+  font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+  font-weight: 850;
+  text-align: center;
+  text-decoration: none;
+
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.home-button span {
+  font-size: 1.35em;
+  line-height: 1;
+}
+
+.home-button--primary {
+  border-color: var(--home-lime);
+  background: var(--home-lime);
+  color: var(--home-black);
+}
+
+.home-button--outline {
+  border-color: var(--home-white);
+  background: transparent;
+  color: var(--home-white);
+}
+
+.home-button:focus-visible {
+  outline: 3px solid var(--home-white);
+  outline-offset: 4px;
+}
+
+/* =====================================================
+   FOOTER TAGLINE
+   ===================================================== */
+
+.home-hero__tagline {
+  grid-area: tagline;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+
+  margin: 2.2rem 0 0;
+
+  color: #e6e6ff;
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  line-height: 1.5;
+  text-align: center;
+}
+
+.home-hero__tagline > span {
+  flex: 0 0 12px;
+  width: 12px;
+  height: 12px;
+
+  border-radius: 50%;
+  background: var(--home-lime);
+}
+
+/* =====================================================
+   TABLET
+   ===================================================== */
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .home-hero {
+    column-gap: 1rem;
+    padding: 2rem 1.25rem;
+  }
+
+  .home-hero__title {
+    font-size: clamp(2.65rem, 5.4vw, 3.6rem);
+  }
+
+  .home-hero__visual {
+    min-height: 470px;
+    padding-top: 100px;
+  }
+
+  .home-hero__character {
+    max-width: 350px;
+    max-height: 500px;
+  }
+
+  .home-speech {
+    left: 0;
+    width: 100%;
+    min-height: 90px;
+    padding: 1rem;
+    border-radius: 24px;
+  }
+
+  .home-speech__text {
+    font-size: 0.9rem;
+  }
+
+  .home-hero__description {
+    font-size: 1rem;
+  }
+
+  .home-hero__benefits li {
+    font-size: 0.95rem;
+  }
+
+  .home-benefit-check {
+    flex-basis: 28px;
+    width: 28px;
+    height: 28px;
+  }
+
+  .home-button {
+    flex-basis: 100%;
+    min-height: 48px;
+  }
+}
+
+/* =====================================================
+   MOBILE — TEXT LEFT, CHARACTER RIGHT
+   ===================================================== */
+
+@media (max-width: 600px) {
+  .home-hero {
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.82fr);
+    grid-template-areas:
+      "eyebrow eyebrow"
+      "title visual"
+      "description visual"
+      "benefits benefits"
+      "actions actions"
+      "tagline tagline";
+
+    align-items: start;
+    column-gap: 0.35rem;
+    row-gap: 0;
+
+    padding: 1.2rem 1rem 1.5rem;
+  }
+
+  .home-eyebrow {
+    grid-area: eyebrow;
+
+    gap: 0.55rem;
+    margin-bottom: 1.3rem;
+
+    font-size: clamp(0.61rem, 2.6vw, 0.82rem);
+    letter-spacing: 0.035em;
+  }
+
+  .home-eyebrow__line {
+    flex-basis: 22px;
+    height: 6px;
+  }
+
+  .home-hero__title {
+    grid-area: title;
+    align-self: start;
+
+    margin: 0;
+
+    font-size: clamp(1.85rem, 7.6vw, 2.85rem);
+    letter-spacing: -0.07em;
+    line-height: 1;
+  }
+
+  .home-hero__title > span {
+    white-space: nowrap;
+  }
+
+  .home-hero__visual {
+    grid-area: visual;
+
+    position: relative;
+
+    align-self: start;
+    justify-content: flex-start;
+
+    width: 100%;
+    min-height: 0;
+
+    padding-top: clamp(5.6rem, 25vw, 8rem);
+  }
+
+  .home-hero__character {
+    width: 100%;
+    max-width: 250px;
+    max-height: 380px;
+    height: auto;
+
+    object-fit: contain;
+    object-position: center top;
+  }
+
+  /* Clean speech bubble, matching the supplied reference. */
+
+  .home-speech {
+    top: 0;
+    left: -15%;
+
+    width: 125%;
+    min-height: 66px;
+
+    padding: 0.7rem 0.55rem;
+
+    border-width: 2.5px;
+    border-radius: 24px;
+  }
+
+  .home-speech::before {
+    left: 52%;
+    bottom: -15px;
+
+    width: 21px;
+    height: 21px;
+
+    border-width: 2.5px;
+  }
+
+  .home-speech::after {
+    left: calc(52% + 1px);
+    bottom: -1px;
+
+    width: 19px;
+    height: 5px;
+  }
+
+  .home-speech__text {
+    font-size: clamp(0.65rem, 2.7vw, 0.88rem);
+    line-height: 1.4;
+  }
+
+  .home-hero__description {
+    grid-area: description;
+    align-self: start;
+
+    width: 100%;
+    max-width: none;
+
+    margin: 1.1rem 0 0;
+
+    font-size: clamp(0.85rem, 3.8vw, 1.05rem);
+    line-height: 1.5;
+  }
+
+  .home-hero__benefits {
+    grid-area: benefits;
+    gap: 0.75rem;
+
+    margin-top: 1.3rem;
+  }
+
+  .home-hero__benefits li {
+    align-items: center;
+    gap: 0.65rem;
+
+    font-size: clamp(0.88rem, 3.8vw, 1.05rem);
+    line-height: 1.35;
+  }
+
+  .home-benefit-check {
+    flex-basis: 29px;
+    width: 29px;
+    height: 29px;
+
+    font-size: 1rem;
+  }
+
+  .home-hero__actions {
+    grid-area: actions;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+
+    width: 100%;
+    max-width: none;
+
+    margin-top: 1.4rem;
+  }
+
+  .home-button {
+    flex: 0 0 auto;
+    width: 100%;
+    min-height: 50px;
+
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+
+  .home-hero__tagline {
+    grid-area: tagline;
+
+    gap: 0.65rem;
+    margin-top: 1.5rem;
+
+    font-size: clamp(0.85rem, 3.8vw, 1.05rem);
+    line-height: 1.5;
+  }
+
+  .home-hero__tagline > span {
+    flex-basis: 10px;
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* =====================================================
+   VERY SMALL PHONES
+   ===================================================== */
+
+@media (max-width: 360px) {
+  .home-hero {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.78fr);
+    padding-inline: 0.75rem;
+    column-gap: 0.25rem;
+  }
+
+  .home-eyebrow {
+    font-size: 0.59rem;
+  }
+
+  .home-hero__title {
+    font-size: clamp(1.7rem, 7.3vw, 2rem);
+  }
+
+  .home-hero__visual {
+    padding-top: 5.5rem;
+  }
+
+  .home-speech {
+    left: -18%;
+    width: 135%;
+    min-height: 61px;
+    padding-inline: 0.4rem;
+  }
+
+  .home-speech__text {
+    font-size: 0.64rem;
+  }
+
+  .home-hero__description {
+    font-size: 0.82rem;
+  }
+
+  .home-hero__benefits li {
+    font-size: 0.84rem;
+  }
+
+  .home-button {
+    font-size: 0.94rem;
+  }
+}
+
+/* =====================================================
+   ANIMATION AND ACCESSIBILITY
+   ===================================================== */
+
+@keyframes home-question-in {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .home-button:hover {
+    transform: translateY(-2px);
+  }
+
+  .home-button--primary:hover {
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-speech__text {
+    animation: none;
+  }
+
+  .home-button {
+    transition: none;
+  }
+}
