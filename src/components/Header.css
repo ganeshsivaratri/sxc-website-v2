@@ -3,26 +3,23 @@
    File: Header.css
 
    SECTION 1  - Header layout and theme
-   SECTION 2  - Logo typography and colors
-   SECTION 3  - Logo animation and interaction
-   SECTION 4  - Navigation links
-   SECTION 5  - Join Project button
-   SECTION 6  - Mobile menu toggle
-   SECTION 7  - Entrance animation keyframes
-   SECTION 8  - Tablet responsive styles
-   SECTION 9  - Mobile responsive styles
-   SECTION 10 - Reduced-motion accessibility
+   SECTION 2  - Image logo
+   SECTION 3  - Navigation links
+   SECTION 4  - Join Project button
+   SECTION 5  - Mobile menu toggle
+   SECTION 6  - Entrance animation keyframes
+   SECTION 7  - Tablet responsive styles
+   SECTION 8  - Mobile responsive styles
+   SECTION 9  - Accessibility and reduced motion
    ========================================================= */
 
 
 /* =========================================================
    SECTION 1: HEADER LAYOUT AND THEME
-   Change the theme colors here if needed.
    ========================================================= */
 
-/* Sticky header: remains visible while the page scrolls. */
 .sxc-header {
-  --sxc-electric-blue: #2410f5;
+  --sxc-electric-blue: #1800ff;
   --sxc-deep-blue: #1600cc;
   --sxc-neon-lime: #c8ff00;
   --sxc-white: #ffffff;
@@ -43,9 +40,7 @@
   box-sizing: border-box;
 }
 
-/* Main header container.
-   The logo stays left, navigation stays centered,
-   and the CTA stays on the right. */
+/* Logo left, navigation centered, CTA right */
 
 .sxc-header__inner {
   width: min(calc(100% - 64px), 1440px);
@@ -60,17 +55,8 @@
 
 
 /* =========================================================
-   SECTION 2: LOGO TYPOGRAPHY AND COLORS
-   Edit this section to change font sizes, weights,
-   colors, letter spacing, or alignment.
-
-   Desktop targets:
-   S/C       = 38px / 800
-   lowercase = 27px / 700
-   X         = 50px / 900
+   SECTION 2: IMAGE LOGO
    ========================================================= */
-
-/* Logo link and alignment */
 
 .sxc-header__brand {
   display: inline-flex;
@@ -86,105 +72,18 @@
   line-height: 1;
 }
 
-/* Wordmark container.
-   All characters share the same baseline. */
-
-.sxc-header__logo-word {
-  display: inline-flex;
-  align-items: baseline;
-  white-space: nowrap;
-  line-height: 1;
-
-  /* Adjust slightly if you want tighter or looser spacing. */
-  letter-spacing: -0.8px;
+.sxc-header__logo-image {
+  display: block;
+  width: 255px;
+  max-width: 100%;
+  height: 58px;
+  object-fit: contain;
+  object-position: left center;
 }
-
-/* Shared character settings.
-   The entrance animation is defined separately below. */
-
-.sxc-header__logo-char {
-  display: inline-block;
-  flex: 0 0 auto;
-
-  color: var(--sxc-white);
-  line-height: 1;
-
-  /* Smooth color changes without glow or text shadows. */
-  transition: color 220ms ease;
-}
-
-/* Capital S and C */
-
-.sxc-header__logo-cap {
-  font-size: 38px;
-  font-weight: 800;
-  line-height: 1;
-  color: var(--sxc-white);
-}
-
-/* Lowercase letters: intra and reations */
-
-.sxc-header__logo-lower {
-  font-size: 27px;
-  font-weight: 700;
-  line-height: 1;
-  color: var(--sxc-white);
-}
-
-/* Signature X */
-
-.sxc-header__logo-x {
-  font-size: 50px;
-  font-weight: 900;
-  line-height: 1;
-  color: var(--sxc-neon-lime);
-}
-
-/* No logo glow, text shadow, or decorative filter.
-   Keep the wordmark crisp and typography-focused. */
 
 
 /* =========================================================
-   SECTION 3: LOGO ANIMATION AND INTERACTION
-   Edit this section to change the logo's motion.
-
-   Entrance timing and movement are separate from typography.
-   ========================================================= */
-
-/* Initial state for each character.
-   Individual delays are assigned in Header.tsx. */
-
-.sxc-header__logo-char {
-  opacity: 0;
-  transform: translateX(-12px);
-
-  animation:
-    sxc-logo-reveal
-    320ms
-    cubic-bezier(0.16, 1, 0.3, 1)
-    forwards;
-}
-
-/* A selected white character becomes neon lime. */
-
-.sxc-header__logo-char.is-active:not(.sxc-header__logo-x) {
-  color: var(--sxc-neon-lime);
-}
-
-/* When a character is activated, the X turns white. */
-
-.sxc-header__logo-x.is-x-swapped,
-.sxc-header__logo-x.is-active {
-  color: var(--sxc-white);
-}
-
-/* Keep the logo interaction free of glow effects. */
-
-
-/* =========================================================
-   SECTION 4: NAVIGATION LINKS
-   Edit navigation appearance here without changing
-   the logo typography or logo animation.
+   SECTION 3: NAVIGATION LINKS
    ========================================================= */
 
 .sxc-header__navigation {
@@ -248,9 +147,7 @@
 
 
 /* =========================================================
-   SECTION 5: JOIN PROJECT BUTTON
-   The button is compact and sized to its text.
-   Adjust padding and font-size here independently.
+   SECTION 4: JOIN PROJECT BUTTON
    ========================================================= */
 
 .sxc-header__cta {
@@ -262,7 +159,6 @@
   width: fit-content;
   max-width: 100%;
 
-  /* Small, text-proportional button dimensions. */
   padding: 10px 16px;
 
   background-color: var(--sxc-neon-lime);
@@ -306,7 +202,7 @@
   transform: scale(0.98);
 }
 
-/* Hide the mobile CTA and menu toggle on desktop. */
+/* Hide the mobile CTA and menu toggle on desktop */
 
 .sxc-header__cta--mobile,
 .sxc-header__toggle {
@@ -315,8 +211,7 @@
 
 
 /* =========================================================
-   SECTION 6: MOBILE MENU TOGGLE
-   Visible only when the mobile breakpoint is active.
+   SECTION 5: MOBILE MENU TOGGLE
    ========================================================= */
 
 .sxc-header__toggle {
@@ -354,7 +249,7 @@
     opacity 180ms ease;
 }
 
-/* Transform the hamburger into a close icon when open. */
+/* Transform hamburger into a close icon when open */
 
 .sxc-header__toggle[aria-expanded='true'] span:first-child {
   transform: translateY(8px) rotate(45deg);
@@ -370,26 +265,8 @@
 
 
 /* =========================================================
-   SECTION 7: ENTRANCE ANIMATION KEYFRAMES
-   Change animation movement here without changing
-   the typography, colors, or layout.
+   SECTION 6: ENTRANCE ANIMATION KEYFRAMES
    ========================================================= */
-
-/* Logo characters reveal from left to right. */
-
-@keyframes sxc-logo-reveal {
-  from {
-    opacity: 0;
-    transform: translateX(-12px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* Navigation links rise gently into view. */
 
 @keyframes sxc-nav-reveal {
   from {
@@ -402,8 +279,6 @@
     transform: translateY(0);
   }
 }
-
-/* CTA enters after the logo and navigation begin appearing. */
 
 @keyframes sxc-cta-reveal {
   from {
@@ -419,14 +294,18 @@
 
 
 /* =========================================================
-   SECTION 8: TABLET RESPONSIVE STYLES
-   Adjust logo and header spacing for medium screens.
+   SECTION 7: TABLET RESPONSIVE STYLES
    ========================================================= */
 
 @media (max-width: 1050px) and (min-width: 761px) {
   .sxc-header__inner {
     width: calc(100% - 40px);
     gap: 20px;
+  }
+
+  .sxc-header__logo-image {
+    width: 220px;
+    height: 52px;
   }
 
   .sxc-header__navigation {
@@ -441,26 +320,11 @@
     padding: 9px 12px;
     font-size: 12px;
   }
-
-  /* Tablet logo sizes */
-
-  .sxc-header__logo-cap {
-    font-size: 32px;
-  }
-
-  .sxc-header__logo-x {
-    font-size: 42px;
-  }
-
-  .sxc-header__logo-lower {
-    font-size: 23px;
-  }
 }
 
 
 /* =========================================================
-   SECTION 9: MOBILE RESPONSIVE STYLES
-   Keep the wordmark on one line and prevent clipping.
+   SECTION 8: MOBILE RESPONSIVE STYLES
    ========================================================= */
 
 @media (max-width: 760px) {
@@ -477,32 +341,19 @@
     overflow: visible;
   }
 
-  .sxc-header__logo-word {
-    letter-spacing: -0.7px;
+  .sxc-header__logo-image {
+    width: clamp(180px, 52vw, 230px);
+    height: 46px;
   }
 
-  /* Proportional mobile logo sizes */
-
-  .sxc-header__logo-cap {
-    font-size: clamp(24px, 5.5vw, 30px);
-  }
-
-  .sxc-header__logo-x {
-    font-size: clamp(32px, 7.2vw, 40px);
-  }
-
-  .sxc-header__logo-lower {
-    font-size: clamp(15px, 3.8vw, 20px);
-  }
-
-  /* Show the hamburger toggle. */
+  /* Show the hamburger toggle */
 
   .sxc-header__toggle {
     display: inline-flex;
     justify-self: end;
   }
 
-  /* Mobile navigation is a dropdown panel. */
+  /* Mobile navigation dropdown */
 
   .sxc-header__navigation {
     position: absolute;
@@ -522,7 +373,7 @@
     border-top: 1px solid rgb(255 255 255 / 15%);
   }
 
-  /* Display the menu when the toggle is activated. */
+  /* Display the menu when opened */
 
   .sxc-header__navigation.is-open {
     display: flex;
@@ -544,13 +395,13 @@
     transform-origin: left center;
   }
 
-  /* Hide the desktop button. */
+  /* Hide desktop button */
 
   .sxc-header__cta--desktop {
     display: none;
   }
 
-  /* Show the compact button inside the mobile menu. */
+  /* Show button inside mobile menu */
 
   .sxc-header__cta--mobile {
     display: inline-flex;
@@ -570,8 +421,7 @@
 
 
 /* =========================================================
-   SECTION 10: ACCESSIBILITY AND REDUCED MOTION
-   Respect the user's operating-system motion preference.
+   SECTION 9: ACCESSIBILITY AND REDUCED MOTION
    ========================================================= */
 
 .sxc-header__brand:focus-visible,
@@ -583,7 +433,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .sxc-header__logo-char,
   .sxc-header__link,
   .sxc-header__cta {
     opacity: 1;
@@ -591,7 +440,6 @@
     animation: none;
   }
 
-  .sxc-header__logo-char,
   .sxc-header__link,
   .sxc-header__link::after,
   .sxc-header__cta,
