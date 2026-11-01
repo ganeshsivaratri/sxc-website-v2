@@ -1,4 +1,3 @@
-
 import { useRef, useState } from 'react'
 import './FakeVsReal.css'
 
@@ -20,95 +19,98 @@ type Comparison = {
 const cards: Comparison[] = [
   {
     number: '01',
-    category: 'Internships',
-    subtitle: 'A certificate is not the same as real experience.',
+    category: 'Projects',
+    subtitle: 'Your project is only worth what you can explain.',
     fake: [
-      { title: 'Random WhatsApp group', note: 'Students are added without a proper introduction.' },
-      { title: 'Join the Zoom call', note: 'Repeated joining requests, but little clarity about the work.' },
-      { title: 'Free internship… but!', note: 'A registration fee suddenly appears.' },
-      { title: 'Pay ₹500–₹2,000', note: 'You are asked to pay to participate or receive a certificate.' },
-      { title: 'Certificate for everyone', note: 'You may get one without attending or doing the work.' },
-      { title: 'No practical skills', note: 'You finish with a certificate, but little you can demonstrate.' },
+      { title: 'Bought ready-made', note: 'Same project in 500 resumes' },
+      { title: 'Copied, no clue', note: "Can't explain one page" },
+      { title: 'Demo-only build', note: 'Breaks under questions' },
+      { title: 'No proof of work', note: 'No GitHub, no journey' },
     ],
     real: [
-      { title: 'Clear terms upfront', note: 'The organisation explains the role and any fees before you join.' },
-      { title: 'Real work experience', note: 'You work on tasks with a clear purpose.' },
-      { title: 'Learn by doing', note: 'You practise skills through assignments and projects.' },
-      { title: 'Mentor feedback', note: 'Someone reviews your work and helps you improve.' },
-      { title: 'Earn your certificate', note: 'Recognition follows the agreed completion requirements.' },
-      { title: 'Skills for your résumé', note: 'You can explain your projects and experience in interviews.' },
+      { title: 'Built by you', note: 'Your module, your team' },
+      { title: 'Frontend + backend', note: 'Explain every line' },
+      { title: 'Live and deployed', note: 'A link anyone can open' },
+      { title: 'Proof behind it', note: 'Commits + Journey Book' },
     ],
-    fakeNote: 'You may get a certificate, but you may not gain the skills.',
-    realNote: 'You gain practical skills, project experience and confidence.',
+    fakeNote: 'Looks strong. Collapses in the interview.',
+    realNote: 'Open it. Show it. Explain it.',
   },
   {
     number: '02',
-    category: 'Job Placements',
-    subtitle: 'A job promise is not the same as a genuine job.',
+    category: 'Internships',
+    subtitle: 'A certificate is not the same as real experience.',
     fake: [
-      { title: 'Guaranteed job claims', note: 'A job is promised without a proper selection process.' },
-      { title: 'Pay to get hired', note: 'You are asked to pay money to secure an offer.' },
-      { title: 'Unknown recruiters', note: 'The company or recruiter cannot be verified.' },
-      { title: 'Huge salary promises', note: 'Unrealistic packages are advertised without proof.' },
-      { title: 'No real interview', note: 'An offer arrives without checking your abilities.' },
-      { title: 'Urgent decisions', note: 'You are pressured to accept or pay immediately.' },
+      { title: 'Random WhatsApp group', note: 'Added with no introduction' },
+      { title: 'Free internship... but!', note: 'Fee of ₹500–₹2,000 appears' },
+      { title: 'Certificate for all', note: 'No work needed to get one' },
+      { title: 'No practical skills', note: 'Nothing you can demonstrate' },
     ],
     real: [
-      { title: 'Verified employer', note: 'You can independently check the company and recruiter.' },
-      { title: 'Clear hiring process', note: 'Interview stages and selection criteria are explained.' },
-      { title: 'Defined job role', note: 'Your responsibilities are clear before joining.' },
-      { title: 'Written offer', note: 'Salary, location and employment terms are documented.' },
-      { title: 'Skills-based selection', note: 'Your abilities are assessed fairly.' },
-      { title: 'Time to decide', note: 'You can review the offer and ask questions.' },
+      { title: 'Clear terms upfront', note: 'Role and fees explained first' },
+      { title: 'Real work experience', note: 'Tasks with a clear purpose' },
+      { title: 'Mentor feedback', note: 'Your work gets reviewed' },
+      { title: 'Skills for your resume', note: 'Explain it in interviews' },
     ],
-    fakeNote: 'A promised job does not mean a genuine job opportunity.',
-    realNote: 'A genuine employer values your skills and follows a clear process.',
+    fakeNote: 'A certificate, but no skills.',
+    realNote: 'Skills and confidence you can show.',
   },
   {
     number: '03',
     category: 'Online Courses',
     subtitle: 'A course should teach you something you can actually use.',
     fake: [
-      { title: 'Guaranteed success', note: 'Career growth is promised without realistic conditions.' },
-      { title: 'Hidden charges', note: 'Extra payments appear after enrolment.' },
-      { title: 'Outdated lessons', note: 'Content offers little useful or current knowledge.' },
-      { title: 'Certificate-focused', note: 'The certificate matters more than what you learn.' },
-      { title: 'No support', note: 'Questions and doubts are left unanswered.' },
-      { title: 'No practical work', note: 'You finish without building or practising anything.' },
+      { title: 'Guaranteed success', note: 'Promised with no conditions' },
+      { title: 'Hidden charges', note: 'Extra payments after joining' },
+      { title: 'Certificate-focused', note: 'Certificate over learning' },
+      { title: 'No practical work', note: 'Nothing built, nothing practised' },
     ],
     real: [
-      { title: 'Clear syllabus', note: 'Topics and learning outcomes are shared upfront.' },
-      { title: 'Transparent fees', note: 'Pricing and additional costs are explained.' },
-      { title: 'Structured lessons', note: 'You learn step by step, from basics onwards.' },
-      { title: 'Hands-on practice', note: 'You apply lessons through real assignments.' },
-      { title: 'Guidance and support', note: 'You can ask questions and receive feedback.' },
-      { title: 'Usable knowledge', note: 'You can apply what you learn in real projects.' },
+      { title: 'Clear syllabus', note: 'Outcomes shared upfront' },
+      { title: 'Transparent fees', note: 'All costs explained first' },
+      { title: 'Hands-on practice', note: 'Assignments, not just videos' },
+      { title: 'Usable knowledge', note: 'Apply it in real projects' },
     ],
-    fakeNote: 'You may complete the course without being able to apply the knowledge.',
-    realNote: 'You leave with knowledge and practical work you can demonstrate.',
+    fakeNote: 'Completed, but nothing you can apply.',
+    realNote: 'Knowledge you can use in projects.',
   },
   {
     number: '04',
+    category: 'Job Placements',
+    subtitle: 'A job promise is not the same as a genuine job.',
+    fake: [
+      { title: 'Guaranteed job claims', note: 'Promised with no selection' },
+      { title: 'Pay to get hired', note: 'Money asked to secure offer' },
+      { title: 'No real interview', note: 'Offer without any test' },
+      { title: 'Urgent decisions', note: 'Pressured to pay immediately' },
+    ],
+    real: [
+      { title: 'Verified employer', note: 'Check the company yourself' },
+      { title: 'Clear hiring process', note: 'Stages explained upfront' },
+      { title: 'Written offer', note: 'Terms documented in writing' },
+      { title: 'Skills-based selection', note: 'Abilities assessed fairly' },
+    ],
+    fakeNote: 'A promise is not a genuine job.',
+    realNote: 'A real process that values skills.',
+  },
+  {
+    number: '05',
     category: 'Freelancing',
     subtitle: 'Real clients value clear terms and work that delivers results.',
     fake: [
-      { title: 'Pay to unlock work', note: 'You are charged just to receive a project.' },
-      { title: 'Unclear requirements', note: 'Nobody explains exactly what needs to be delivered.' },
-      { title: 'Unrealistic earnings', note: 'Huge payments are promised for minimal effort.' },
-      { title: 'Endless extra work', note: 'More tasks are added without agreement.' },
-      { title: 'Unknown client', note: 'The client or business identity is unclear.' },
-      { title: 'Changing payment terms', note: 'Payment is delayed or the agreement keeps changing.' },
+      { title: 'Pay to unlock work', note: 'Charged just to get work' },
+      { title: 'Unclear requirements', note: 'Deliverables never explained' },
+      { title: 'Unrealistic earnings', note: 'Huge pay for minimal effort' },
+      { title: 'Payment terms change', note: 'Payment delayed, terms shift' },
     ],
     real: [
-      { title: 'Verified client', note: 'You take steps to confirm who you are working with.' },
-      { title: 'Clear project scope', note: 'Deliverables, deadlines and revisions are agreed.' },
-      { title: 'Written payment terms', note: 'Rates and payment dates are documented.' },
-      { title: 'Professional communication', note: 'Expectations and changes are discussed clearly.' },
-      { title: 'Fair workload', note: 'Extra work is discussed before you accept it.' },
-      { title: 'Real portfolio work', note: 'Completed projects demonstrate your abilities.' },
+      { title: 'Verified client', note: 'Confirm who you work for' },
+      { title: 'Clear project scope', note: 'Deadlines and revisions agreed' },
+      { title: 'Written payment terms', note: 'Rates and dates documented' },
+      { title: 'Real portfolio work', note: 'Projects that prove ability' },
     ],
-    fakeNote: 'You spend time working, but may never receive fair payment or credit.',
-    realNote: 'You build client experience, a portfolio and professional confidence.',
+    fakeNote: 'Work done, payment unsure.',
+    realNote: 'Experience, portfolio, confidence.',
   },
 ]
 
@@ -212,6 +214,8 @@ function FakeVsReal() {
                     </div>
                   </section>
 
+                  <span className="fvr-vs-badge" aria-hidden="true">VS</span>
+
                   <section className="fvr-panel fvr-panel--real">
                     <div className="fvr-panel-heading">
                       <span className="fvr-status-icon" aria-hidden="true">✓</span>
@@ -265,6 +269,16 @@ function FakeVsReal() {
             />
           ))}
         </nav>
+
+        <div className="fvr-punch">
+          <p>
+            Interviewers don&apos;t ask for your file.
+            They ask you to <span>explain it.</span>
+          </p>
+          <a className="fvr-journey-link" href="/student-journey">
+            See how a real journey looks →
+          </a>
+        </div>
 
         <p className="fvr-bottom-note">
           <strong>Remember:</strong> Verify the opportunity, understand the
