@@ -3,6 +3,8 @@ import Home from './pages/Home'
 import BuildTicker from './components/BuildTicker'
 import InterviewPriority from './components/InterviewPriority'
 import VideoShowcase from './components/VideoShowcase'
+import FakeVsReal from './components/FakeVsReal'
+
 
 // =====================================================
 // MAIN APP — HOMEPAGE SECTION ORDER
@@ -25,6 +27,7 @@ function App() {
 
       {/* SECTION 5: BUILD YOUR FUTURE VIDEO */}
       <VideoShowcase />
+      <FakeVsReal />
     </>
   )
 }
