@@ -1,4 +1,6 @@
+
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import heroCharacter from '../assets/my-heroimg.png'
 import './Home.css'
 
@@ -97,9 +99,9 @@ function Home() {
         </ul>
 
         <div className="home-hero__actions">
-          <a className="home-button home-button--primary" href="#projects">
+          <Link className="home-button home-button--primary" to="/projects">
             Explore Projects <span aria-hidden="true">⟶</span>
-          </a>
+          </Link>
 
           <a className="home-button home-button--outline" href="#journey">
             Start Your Journey <span aria-hidden="true">↗</span>

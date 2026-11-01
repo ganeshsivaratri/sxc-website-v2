@@ -1,4 +1,6 @@
+
 import { useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import logoImage from '../assets/sintrax-creations-logo.png'
 import './Header.css'
 
@@ -6,7 +8,10 @@ import './Header.css'
 // SECTION 1: NAVIGATION CONTENT
 // =========================================================
 
-const navigationLinks = [{ label: 'Home', href: '#home' }]
+const navigationLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'Projects', href: '/projects' },
+]
 
 // =========================================================
 // SECTION 2: HEADER COMPONENT
@@ -15,6 +20,7 @@ const navigationLinks = [{ label: 'Home', href: '#home' }]
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const location = useLocation()
 
   const closeMenu = () => setMenuOpen(false)
 
@@ -23,9 +29,9 @@ function Header() {
       <div className="sxc-header__inner">
         {/* SECTION 3: BRAND LOGO */}
 
-        <a
+        <Link
           className="sxc-header__brand"
-          href="#home"
+          to="/"
           aria-label="SintraX Creations home"
           onClick={closeMenu}
         >
@@ -34,7 +40,7 @@ function Header() {
             src={logoImage}
             alt="SintraX Creations"
           />
-        </a>
+        </Link>
 
         {/* SECTION 4: MOBILE MENU TOGGLE */}
 
@@ -61,16 +67,18 @@ function Header() {
           aria-label="Main navigation"
         >
           {navigationLinks.map((link, index) => (
-            <a
+            <Link
               className="sxc-header__link"
-              href={link.href}
+              to={link.href}
               key={link.label}
-              aria-current="page"
+              aria-current={
+                location.pathname === link.href ? 'page' : undefined
+              }
               style={{ animationDelay: `${250 + index * 115}ms` }}
               onClick={closeMenu}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
 
           {/* Mobile CTA */}

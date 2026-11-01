@@ -1,3 +1,6 @@
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
 import Header from './components/Header'
 import Home from './pages/Home'
 import BuildTicker from './components/BuildTicker'
@@ -5,32 +8,31 @@ import InterviewPriority from './components/InterviewPriority'
 import VideoShowcase from './components/VideoShowcase'
 import FakeVsReal from './components/FakeVsReal'
 import WhatIsSXC from './components/WhatIsSXC'
-
-
-// =====================================================
-// MAIN APP — HOMEPAGE SECTION ORDER
-// =====================================================
+import Projects from './pages/Projects'
 
 function App() {
   return (
-    <>
-      {/* SECTION 1: HEADER */}
+    <BrowserRouter>
       <Header />
 
-      {/* SECTION 2: HERO */}
-      <Home />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Home />
+              <BuildTicker />
+              <InterviewPriority />
+              <VideoShowcase />
+              <FakeVsReal />
+              <WhatIsSXC />
+            </>
+          }
+        />
 
-      {/* SECTION 3: SCROLLING TICKER */}
-      <BuildTicker />
-
-      {/* SECTION 4: INTERVIEW PRIORITY */}
-      <InterviewPriority />
-
-      {/* SECTION 5: BUILD YOUR FUTURE VIDEO */}
-      <VideoShowcase />
-      <FakeVsReal />
-      <WhatIsSXC />
-    </>
+        <Route path="/projects" element={<Projects />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
