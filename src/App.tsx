@@ -4,6 +4,7 @@ import BuildTicker from './components/BuildTicker'
 import InterviewPriority from './components/InterviewPriority'
 import VideoShowcase from './components/VideoShowcase'
 import FakeVsReal from './components/FakeVsReal'
+import WhatIsSXC from './components/WhatIsSXC'
 
 
 // =====================================================
@@ -28,6 +29,7 @@ function App() {
       {/* SECTION 5: BUILD YOUR FUTURE VIDEO */}
       <VideoShowcase />
       <FakeVsReal />
+      <WhatIsSXC />
     </>
   )
 }
