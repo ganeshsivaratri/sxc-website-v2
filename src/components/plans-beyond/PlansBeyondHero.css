@@ -1,0 +1,489 @@
+/* =========================================================
+   PLANS & BEYOND HERO — POLISHED (NO PURPLE TINTS)
+   ========================================================= */
+
+.plans-beyond-hero {
+  --plans-blue: #1800ff;
+  --plans-lime: #c5ff00;
+  --plans-white: #ffffff;
+  --plans-dark: #101039;
+
+  width: 100%;
+  overflow: hidden;
+  padding: 55px 5% 45px;
+  background:
+    radial-gradient(620px 620px at 85% 18%, rgba(197, 255, 0, 0.13), transparent 62%),
+    var(--plans-blue);
+  color: var(--plans-white);
+  -webkit-font-smoothing: antialiased;
+}
+
+.plans-beyond-hero ::selection {
+  background: var(--plans-lime);
+  color: #080808;
+}
+
+.plans-beyond-inner {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   ENTRANCE MOTION
+   ========================================================= */
+
+@keyframes plans-rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes plans-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes plans-line {
+  from { transform: rotate(-4deg) scaleX(0); }
+  to { transform: rotate(-4deg) scaleX(1); }
+}
+
+@keyframes plans-float {
+  0%, 100% { transform: scale(1.06) translateY(0); }
+  50% { transform: scale(1.06) translateY(-9px); }
+}
+
+@keyframes plans-float-m {
+  0%, 100% { transform: scale(1.08) translateY(0); }
+  50% { transform: scale(1.08) translateY(-7px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .plans-beyond-hero * {
+    animation: none !important;
+  }
+}
+
+/* MAIN LAYOUT */
+
+.plans-hero-main {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 12px;
+  min-height: 500px;
+}
+
+/* LEFT CONTENT */
+
+.plans-hero-content {
+  position: relative;
+  z-index: 2;
+  min-width: 0;
+}
+
+.plans-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 27px;
+  padding: 12px 24px;
+  border-radius: 50px;
+  background: var(--plans-lime);
+  color: #080808;
+  font-size: 13px;
+  font-weight: 950;
+  letter-spacing: 2px;
+  box-shadow: 0 10px 24px rgba(197, 255, 0, 0.22);
+  animation: plans-rise 0.6s ease both;
+}
+
+.plans-hero-content h1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0;
+  font-size: clamp(58px, 7vw, 94px);
+  font-weight: 1000;
+  line-height: 0.98;
+  letter-spacing: -4px;
+  animation: plans-rise 0.7s ease 0.08s both;
+}
+
+.plans-hero-content h1 span {
+  color: var(--plans-lime);
+}
+
+.plans-heading-line {
+  width: 145px;
+  height: 8px;
+  margin: 19px 0 25px 35%;
+  border-radius: 50%;
+  background: linear-gradient(90deg, var(--plans-lime), rgba(197, 255, 0, 0.55));
+  transform: rotate(-4deg);
+  transform-origin: left center;
+  animation: plans-line 0.8s ease 0.35s both;
+}
+
+/* PROJECT MESSAGE */
+
+.plans-hero-description {
+  margin-top: 0;
+  animation: plans-rise 0.7s ease 0.16s both;
+}
+
+.plans-hero-description p {
+  margin: 0 0 12px;
+  font-size: clamp(19px, 2.1vw, 27px);
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.plans-hero-description strong {
+  display: inline-block;
+  margin: 2px 0 13px;
+  padding: 10px 17px;
+  background: var(--plans-lime);
+  color: #080808;
+  font-size: clamp(30px, 3.5vw, 46px);
+  font-weight: 1000;
+  line-height: 1.15;
+  box-shadow: 0 12px 26px rgba(197, 255, 0, 0.2);
+}
+
+.plans-hero-subtitle {
+  margin: 8px 0 0;
+  font-size: clamp(18px, 2vw, 25px);
+  font-weight: 800;
+  animation: plans-rise 0.7s ease 0.24s both;
+}
+
+/* RIGHT IMAGE */
+
+.plans-hero-image-area {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 520px;
+  overflow: visible;
+  animation: plans-fade 0.9s ease 0.15s both;
+}
+
+/* Floor shadow — neutral black, grounds the figure */
+
+.plans-hero-image-area::after {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  bottom: 4px;
+  left: 50%;
+  width: 68%;
+  height: 30px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.35);
+  filter: blur(14px);
+}
+
+.plans-image-glow {
+  position: absolute;
+  width: 75%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--plans-lime);
+  opacity: 0.12;
+  filter: blur(55px);
+}
+
+.plans-hero-image {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 120%;
+  max-width: none;
+  height: 620px;
+  object-fit: contain;
+  object-position: center bottom;
+  transform: scale(1.06);
+  transform-origin: center center;
+  filter: drop-shadow(0 18px 22px rgba(0, 0, 0, 0.3));
+  animation: plans-float 6s ease-in-out 1s infinite;
+}
+
+/* DESCRIPTION BELOW HERO */
+
+.plans-hero-description-bottom {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  max-width: 1000px;
+  margin: 12px 0 30px;
+  animation: plans-rise 0.7s ease 0.3s both;
+}
+
+.plans-description-marker {
+  flex-shrink: 0;
+  width: 13px;
+  height: 13px;
+  margin-top: 10px;
+  border-radius: 50%;
+  background: var(--plans-lime);
+}
+
+.plans-hero-description-bottom p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: clamp(16px, 1.8vw, 21px);
+  font-weight: 500;
+  line-height: 1.65;
+}
+
+/* SUPPORT AREA */
+
+.plans-support {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  padding: 25px 30px;
+  border-radius: 24px;
+  background: var(--plans-white);
+  color: var(--plans-dark);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.25);
+  animation: plans-rise 0.7s ease 0.38s both;
+}
+
+.plans-support-content {
+  min-width: 0;
+}
+
+.plans-support-label {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: var(--plans-blue);
+  font-size: 12px;
+  font-weight: 1000;
+  letter-spacing: 2px;
+}
+
+.plans-support-content h2 {
+  margin: 0 0 7px;
+  font-size: clamp(19px, 2vw, 25px);
+  font-weight: 950;
+}
+
+.plans-support-content p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.plans-contact-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-shrink: 0;
+  min-width: 190px;
+  padding: 16px 24px;
+  border-radius: 50px;
+  background: var(--plans-lime);
+  color: #080808;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 1000;
+  box-shadow: 0 12px 24px rgba(197, 255, 0, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.plans-contact-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 30px rgba(197, 255, 0, 0.32);
+}
+
+.plans-contact-button:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+}
+
+.plans-contact-button span {
+  font-size: 22px;
+  transition: transform 0.2s ease;
+}
+
+.plans-contact-button:hover span {
+  transform: translate(2px, -2px);
+}
+
+/* TABLET */
+
+@media (max-width: 850px) {
+  .plans-hero-main {
+    grid-template-columns: 1.05fr 0.95fr;
+    min-height: 420px;
+  }
+
+  .plans-hero-content h1 {
+    font-size: clamp(45px, 7vw, 65px);
+    letter-spacing: -2.5px;
+  }
+
+  .plans-hero-image-area {
+    min-height: 460px;
+  }
+
+  .plans-hero-image {
+    width: 125%;
+    height: 490px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .plans-beyond-hero {
+    padding: 30px 5% 28px;
+  }
+
+  .plans-hero-main {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    align-items: center;
+    gap: 0;
+    min-height: 355px;
+  }
+
+  .plans-eyebrow {
+    margin-bottom: 20px;
+    padding: 9px 17px;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+
+  .plans-hero-content h1 {
+    font-size: clamp(29px, 7.8vw, 43px);
+    line-height: 1.02;
+    letter-spacing: -1.8px;
+  }
+
+  .plans-heading-line {
+    width: 85px;
+    height: 6px;
+    margin: 13px 0 19px 25%;
+  }
+
+  .plans-hero-description p {
+    margin-bottom: 8px;
+    font-size: clamp(12px, 3.5vw, 16px);
+    line-height: 1.4;
+  }
+
+  .plans-hero-description strong {
+    margin: 2px 0 9px;
+    padding: 8px 7px;
+    font-size: clamp(17px, 4.7vw, 25px);
+    white-space: nowrap;
+  }
+
+  .plans-hero-subtitle {
+    margin-top: 7px;
+    font-size: clamp(12px, 3.4vw, 16px);
+    line-height: 1.4;
+  }
+
+  .plans-hero-image-area {
+    min-height: 355px;
+    overflow: visible;
+  }
+
+  .plans-hero-image-area::after {
+    bottom: 0;
+    width: 60%;
+    height: 20px;
+  }
+
+  .plans-hero-image {
+    width: 145%;
+    max-width: none;
+    height: 390px;
+    object-fit: contain;
+    object-position: center center;
+    animation-name: plans-float-m;
+  }
+
+  .plans-image-glow {
+    width: 90%;
+    filter: blur(35px);
+  }
+
+  .plans-hero-description-bottom {
+    gap: 10px;
+    margin: 16px 0 22px;
+  }
+
+  .plans-description-marker {
+    width: 9px;
+    height: 9px;
+    margin-top: 7px;
+  }
+
+  .plans-hero-description-bottom p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .plans-support {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+    padding: 19px;
+    border-radius: 20px;
+  }
+
+  .plans-support-label {
+    margin-bottom: 6px;
+    font-size: 10px;
+  }
+
+  .plans-support-content h2 {
+    font-size: 17px;
+  }
+
+  .plans-support-content p {
+    font-size: 13px;
+  }
+
+  .plans-contact-button {
+    width: 100%;
+    min-width: 0;
+    padding: 13px 18px;
+    font-size: 14px;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 360px) {
+  .plans-hero-content h1 {
+    font-size: 27px;
+  }
+
+  .plans-hero-image {
+    width: 140%;
+    height: 330px;
+  }
+
+  .plans-hero-main {
+    min-height: 320px;
+  }
+
+  .plans-hero-description p,
+  .plans-hero-subtitle {
+    font-size: 11px;
+  }
+
+  .plans-hero-description strong {
+    font-size: 16px;
+  }
+}

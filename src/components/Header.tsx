@@ -20,6 +20,7 @@ const navigationLinks = [
   { label: 'Home', href: '/' },
   { label: 'Student Journey', href: '/student-journey' },
   { label: 'Projects', href: '/projects' },
+  { label: 'Plans & Beyond', href: '/plans-beyond' },
 ]
 
 
@@ -29,28 +30,18 @@ const navigationLinks = [
 
 function Header() {
 
-  /* Mobile menu state */
-
   const [menuOpen, setMenuOpen] = useState(false)
-
-  /* Current route */
 
   const location = useLocation()
 
-  /* Close menu after navigation */
-
   const closeMenu = () => setMenuOpen(false)
-
 
   return (
     <header className="sxc-header">
 
       <div className="sxc-header__inner">
 
-
-        {/* ===============================================
-            SECTION 3: BRAND LOGO
-            =============================================== */}
+        {/* BRAND LOGO */}
 
         <Link
           className="sxc-header__brand"
@@ -58,19 +49,15 @@ function Header() {
           aria-label="SintraX Creations home"
           onClick={closeMenu}
         >
-
           <img
             className="sxc-header__logo-image"
             src={logoImage}
             alt="SintraX Creations"
           />
-
         </Link>
 
 
-        {/* ===============================================
-            SECTION 4: MOBILE MENU TOGGLE
-            =============================================== */}
+        {/* MOBILE MENU TOGGLE */}
 
         <button
           className="sxc-header__toggle"
@@ -84,17 +71,13 @@ function Header() {
           aria-controls="sxc-primary-navigation"
           onClick={() => setMenuOpen((open) => !open)}
         >
-
           <span />
           <span />
           <span />
-
         </button>
 
 
-        {/* ===============================================
-            SECTION 5: PRIMARY NAVIGATION
-            =============================================== */}
+        {/* PRIMARY NAVIGATION */}
 
         <nav
           id="sxc-primary-navigation"
@@ -121,15 +104,13 @@ function Header() {
 
               onClick={closeMenu}
             >
-
               {link.label}
-
             </Link>
 
           ))}
 
 
-          {/* Mobile CTA */}
+          {/* MOBILE CTA */}
 
           <a
             className="sxc-header__cta sxc-header__cta--mobile"
@@ -142,9 +123,7 @@ function Header() {
         </nav>
 
 
-        {/* ===============================================
-            SECTION 6: DESKTOP CTA
-            =============================================== */}
+        {/* DESKTOP CTA */}
 
         <a
           className="sxc-header__cta sxc-header__cta--desktop"
