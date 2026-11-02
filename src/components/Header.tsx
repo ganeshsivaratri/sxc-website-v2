@@ -1,33 +1,56 @@
 
+/* =========================================================
+   SXC WEBSITE HEADER
+   Main navigation and responsive mobile menu
+   ========================================================= */
+
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+
 import logoImage from '../assets/sintrax-creations-logo.png'
+
 import './Header.css'
 
-// =========================================================
-// SECTION 1: NAVIGATION CONTENT
-// =========================================================
+
+/* =========================================================
+   SECTION 1: NAVIGATION CONTENT
+   ========================================================= */
 
 const navigationLinks = [
   { label: 'Home', href: '/' },
+  { label: 'Student Journey', href: '/student-journey' },
   { label: 'Projects', href: '/projects' },
 ]
 
-// =========================================================
-// SECTION 2: HEADER COMPONENT
-// Manages the mobile navigation menu.
-// =========================================================
+
+/* =========================================================
+   SECTION 2: HEADER COMPONENT
+   ========================================================= */
 
 function Header() {
+
+  /* Mobile menu state */
+
   const [menuOpen, setMenuOpen] = useState(false)
+
+  /* Current route */
+
   const location = useLocation()
+
+  /* Close menu after navigation */
 
   const closeMenu = () => setMenuOpen(false)
 
+
   return (
     <header className="sxc-header">
+
       <div className="sxc-header__inner">
-        {/* SECTION 3: BRAND LOGO */}
+
+
+        {/* ===============================================
+            SECTION 3: BRAND LOGO
+            =============================================== */}
 
         <Link
           className="sxc-header__brand"
@@ -35,69 +58,103 @@ function Header() {
           aria-label="SintraX Creations home"
           onClick={closeMenu}
         >
+
           <img
             className="sxc-header__logo-image"
             src={logoImage}
             alt="SintraX Creations"
           />
+
         </Link>
 
-        {/* SECTION 4: MOBILE MENU TOGGLE */}
+
+        {/* ===============================================
+            SECTION 4: MOBILE MENU TOGGLE
+            =============================================== */}
 
         <button
           className="sxc-header__toggle"
           type="button"
           aria-label={
-            menuOpen ? 'Close navigation menu' : 'Open navigation menu'
+            menuOpen
+              ? 'Close navigation menu'
+              : 'Open navigation menu'
           }
           aria-expanded={menuOpen}
           aria-controls="sxc-primary-navigation"
           onClick={() => setMenuOpen((open) => !open)}
         >
+
           <span />
           <span />
           <span />
+
         </button>
 
-        {/* SECTION 5: PRIMARY NAVIGATION */}
+
+        {/* ===============================================
+            SECTION 5: PRIMARY NAVIGATION
+            =============================================== */}
 
         <nav
           id="sxc-primary-navigation"
           className={`sxc-header__navigation${menuOpen ? ' is-open' : ''}`}
           aria-label="Main navigation"
         >
+
           {navigationLinks.map((link, index) => (
+
             <Link
               className="sxc-header__link"
               to={link.href}
               key={link.label}
+
               aria-current={
-                location.pathname === link.href ? 'page' : undefined
+                location.pathname === link.href
+                  ? 'page'
+                  : undefined
               }
-              style={{ animationDelay: `${250 + index * 115}ms` }}
+
+              style={{
+                animationDelay: `${250 + index * 115}ms`,
+              }}
+
               onClick={closeMenu}
             >
+
               {link.label}
+
             </Link>
+
           ))}
+
 
           {/* Mobile CTA */}
 
           <a
             className="sxc-header__cta sxc-header__cta--mobile"
-            href="#join"
+            href="/#join"
             onClick={closeMenu}
           >
             Join Project
           </a>
+
         </nav>
 
-        {/* SECTION 6: DESKTOP CTA */}
 
-        <a className="sxc-header__cta sxc-header__cta--desktop" href="#join">
+        {/* ===============================================
+            SECTION 6: DESKTOP CTA
+            =============================================== */}
+
+        <a
+          className="sxc-header__cta sxc-header__cta--desktop"
+          href="/#join"
+        >
           Join Project
         </a>
+
       </div>
+
     </header>
   )
 }

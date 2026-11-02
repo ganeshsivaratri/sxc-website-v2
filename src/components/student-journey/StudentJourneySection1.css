@@ -1,0 +1,354 @@
+
+/* =========================================================
+   STUDENT JOURNEY SECTION
+   SXC ELECTRIC BLUE + NEON LIME THEME
+========================================================= */
+
+.journey-section {
+  width: 100%;
+  padding: 75px 6%;
+  background: #f6f8fc;
+  overflow: hidden;
+}
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.journey-section__heading {
+  max-width: 950px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
+
+.journey-section__eyebrow {
+  display: inline-block;
+  margin-bottom: 18px;
+  padding: 9px 22px;
+  border-radius: 30px;
+  background: #c8ff00;
+  color: #080d36;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.journey-section__heading h2 {
+  margin: 0;
+  color: #080d36;
+  font-size: clamp(30px, 4.5vw, 49px);
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+}
+
+.journey-section__heading h2 span {
+  display: block;
+  margin-top: 7px;
+  color: #1600f5;
+}
+
+.journey-section__heading p {
+  max-width: 650px;
+  margin: 18px auto 0;
+  color: #667085;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   PHASE COLLECTION
+========================================================= */
+
+.journey-section__phases {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* =========================================================
+   INDIVIDUAL PHASE CARD
+========================================================= */
+
+.journey-phase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 320px;
+  overflow: hidden;
+  border: 2px solid rgba(22, 0, 245, 0.08);
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 12px 35px rgba(8, 13, 54, 0.08);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.journey-phase:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 40px rgba(22, 0, 245, 0.13);
+}
+
+/* =========================================================
+   ALTERNATING LAYOUT
+========================================================= */
+
+.journey-phase--right .journey-phase__content {
+  order: 1;
+}
+
+.journey-phase--right .journey-phase__image {
+  order: 2;
+}
+
+.journey-phase--left .journey-phase__image {
+  order: 1;
+}
+
+.journey-phase--left .journey-phase__content {
+  order: 2;
+}
+
+/* =========================================================
+   CONTENT AREA
+========================================================= */
+
+.journey-phase__content {
+  min-width: 0;
+  padding: 32px 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #080d36;
+}
+
+.journey-phase__number {
+  width: fit-content;
+  margin-bottom: 14px;
+  padding: 8px 15px;
+  border-radius: 7px;
+  background: #c8ff00;
+  color: #080d36;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.journey-phase__content h3 {
+  margin: 0;
+  color: #080d36;
+  font-size: clamp(25px, 2.8vw, 34px);
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.journey-phase__content h4 {
+  margin: 8px 0 20px;
+  color: #1600f5;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+/* =========================================================
+   CHECKLIST
+========================================================= */
+
+.journey-phase__content ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.journey-phase__content li {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  color: #202747;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+.journey-phase__check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  background: #c8ff00;
+  color: #080d36;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+/* =========================================================
+   LEARNING DURATION
+========================================================= */
+
+.journey-phase__duration {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+  padding: 12px 15px;
+  border: 1px solid rgba(22, 0, 245, 0.12);
+  border-radius: 9px;
+  background: #f2f3ff;
+}
+
+.journey-phase__duration span {
+  color: #080d36;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.journey-phase__duration strong {
+  color: #1600f5;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+/* =========================================================
+   IMAGE AREA
+========================================================= */
+
+.journey-phase__image {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  min-height: 320px;
+  overflow: hidden;
+  background: #1600f5;
+}
+
+.journey-phase__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+.journey-phase:hover .journey-phase__image img {
+  transform: scale(1.04);
+}
+
+.journey-phase__image-label {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  padding: 9px 15px;
+  border-radius: 8px;
+  background: #c8ff00;
+  color: #080d36;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .journey-section {
+    padding: 60px 4%;
+  }
+
+  .journey-phase {
+    min-height: 300px;
+  }
+
+  .journey-phase__image,
+  .journey-phase__image img {
+    min-height: 300px;
+  }
+
+  .journey-phase__content {
+    padding: 25px;
+  }
+
+  .journey-phase__content li {
+    font-size: 12px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .journey-section {
+    padding: 48px 16px;
+  }
+
+  .journey-section__heading {
+    margin-bottom: 32px;
+  }
+
+  .journey-section__heading h2 {
+    font-size: 31px;
+    letter-spacing: -0.8px;
+  }
+
+  .journey-section__heading p {
+    font-size: 13px;
+  }
+
+  .journey-section__phases {
+    gap: 20px;
+  }
+
+  .journey-phase {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    border-radius: 17px;
+  }
+
+  .journey-phase--right .journey-phase__content,
+  .journey-phase--left .journey-phase__content {
+    order: 1;
+  }
+
+  .journey-phase--right .journey-phase__image,
+  .journey-phase--left .journey-phase__image {
+    order: 2;
+  }
+
+  .journey-phase__content {
+    padding: 25px 21px;
+  }
+
+  .journey-phase__content h3 {
+    font-size: 27px;
+  }
+
+  .journey-phase__content h4 {
+    margin-bottom: 17px;
+    font-size: 13px;
+  }
+
+  .journey-phase__content li {
+    font-size: 13px;
+  }
+
+  .journey-phase__image,
+  .journey-phase__image img {
+    min-height: 0;
+    height: 230px;
+  }
+
+  .journey-phase__duration {
+    margin-top: 17px;
+  }
+}
