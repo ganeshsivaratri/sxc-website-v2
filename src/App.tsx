@@ -21,6 +21,9 @@ import Home from './pages/Home'
 import Projects from './pages/Projects'
 import StudentJourney from './pages/StudentJourney'
 import PlansBeyond from './pages/PlansBeyond'
+import JoinNow from './pages/JoinNow'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import Footer from './components/Footer'
 
 
 /* =========================================================
@@ -76,7 +79,10 @@ function App() {
           element={<PlansBeyond />}
         />
 
+        <Route path="/join-now" element={<JoinNow />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       </Routes>
+        <Footer />
 
     </BrowserRouter>
   )

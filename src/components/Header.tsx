@@ -1,4 +1,3 @@
-
 /* =========================================================
    SXC WEBSITE HEADER
    Main navigation and responsive mobile menu
@@ -112,25 +111,25 @@ function Header() {
 
           {/* MOBILE CTA */}
 
-          <a
+          <Link
             className="sxc-header__cta sxc-header__cta--mobile"
-            href="/#join"
+            to="/join-now"
             onClick={closeMenu}
           >
             Join Project
-          </a>
+          </Link>
 
         </nav>
 
 
         {/* DESKTOP CTA */}
 
-        <a
+        <Link
           className="sxc-header__cta sxc-header__cta--desktop"
-          href="/#join"
+          to="/join-now"
         >
           Join Project
-        </a>
+        </Link>
 
       </div>
 
