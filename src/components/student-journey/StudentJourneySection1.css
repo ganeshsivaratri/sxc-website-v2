@@ -1,13 +1,18 @@
 
 /* =========================================================
-   STUDENT JOURNEY SECTION
+   STUDENT JOURNEY SECTION 1
    SXC ELECTRIC BLUE + NEON LIME THEME
+
+   Electric Blue: #1501F5
+   Neon Lime:     #C8FF00
+   Dark Navy:     #080D36
+   White:         #FFFFFF
 ========================================================= */
 
 .journey-section {
   width: 100%;
   padding: 75px 6%;
-  background: #f6f8fc;
+  background: #ffffff;
   overflow: hidden;
 }
 
@@ -45,7 +50,7 @@
 .journey-section__heading h2 span {
   display: block;
   margin-top: 7px;
-  color: #1600f5;
+  color: #1501f5;
 }
 
 .journey-section__heading p {
@@ -77,7 +82,7 @@
   grid-template-columns: 1fr 1fr;
   min-height: 320px;
   overflow: hidden;
-  border: 2px solid rgba(22, 0, 245, 0.08);
+  border: 2px solid rgba(21, 1, 245, 0.08);
   border-radius: 22px;
   background: #ffffff;
   box-shadow: 0 12px 35px rgba(8, 13, 54, 0.08);
@@ -88,12 +93,14 @@
 
 .journey-phase:hover {
   transform: translateY(-5px);
-  box-shadow: 0 18px 40px rgba(22, 0, 245, 0.13);
+  box-shadow: 0 18px 40px rgba(21, 1, 245, 0.13);
 }
 
 /* =========================================================
-   ALTERNATING LAYOUT
+   DESKTOP ALTERNATING LAYOUT
 ========================================================= */
+
+/* Content Left, Image Right */
 
 .journey-phase--right .journey-phase__content {
   order: 1;
@@ -102,6 +109,8 @@
 .journey-phase--right .journey-phase__image {
   order: 2;
 }
+
+/* Image Left, Content Right */
 
 .journey-phase--left .journey-phase__image {
   order: 1;
@@ -122,6 +131,7 @@
   flex-direction: column;
   justify-content: center;
   color: #080d36;
+  background: #ffffff;
 }
 
 .journey-phase__number {
@@ -146,7 +156,7 @@
 
 .journey-phase__content h4 {
   margin: 8px 0 20px;
-  color: #1600f5;
+  color: #1501f5;
   font-size: 14px;
   font-weight: 800;
 }
@@ -200,7 +210,7 @@
   gap: 10px;
   margin-top: 18px;
   padding: 12px 15px;
-  border: 1px solid rgba(22, 0, 245, 0.12);
+  border: 1px solid rgba(21, 1, 245, 0.12);
   border-radius: 9px;
   background: #f2f3ff;
 }
@@ -212,7 +222,7 @@
 }
 
 .journey-phase__duration strong {
-  color: #1600f5;
+  color: #1501f5;
   font-size: 14px;
   font-weight: 900;
 }
@@ -227,7 +237,7 @@
   min-width: 0;
   min-height: 320px;
   overflow: hidden;
-  background: #1600f5;
+  background: #080d36;
 }
 
 .journey-phase__image img {
@@ -257,7 +267,7 @@
 }
 
 /* =========================================================
-   TABLET
+   TABLET RESPONSIVENESS
 ========================================================= */
 
 @media (max-width: 900px) {
@@ -284,12 +294,15 @@
 }
 
 /* =========================================================
-   MOBILE
+   MOBILE RESPONSIVENESS
+   IMAGE FIRST, CONTENT BELOW
+   FOR ALL THREE PHASES
 ========================================================= */
 
 @media (max-width: 600px) {
   .journey-section {
     padding: 48px 16px;
+    background: #ffffff;
   }
 
   .journey-section__heading {
@@ -310,22 +323,42 @@
   }
 
   .journey-phase {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     min-height: auto;
     border-radius: 17px;
   }
 
-  .journey-phase--right .journey-phase__content,
-  .journey-phase--left .journey-phase__content {
-    order: 1;
-  }
+  /* Force IMAGE to appear FIRST on mobile */
 
   .journey-phase--right .journey-phase__image,
   .journey-phase--left .journey-phase__image {
+    order: 1;
+  }
+
+  /* Force CONTENT to appear BELOW image */
+
+  .journey-phase--right .journey-phase__content,
+  .journey-phase--left .journey-phase__content {
     order: 2;
   }
 
+  .journey-phase__image {
+    width: 100%;
+    height: 230px;
+    min-height: 230px;
+  }
+
+  .journey-phase__image img {
+    width: 100%;
+    height: 230px;
+    min-height: 230px;
+    object-fit: cover;
+    object-position: center;
+  }
+
   .journey-phase__content {
+    width: 100%;
     padding: 25px 21px;
   }
 
@@ -340,12 +373,6 @@
 
   .journey-phase__content li {
     font-size: 13px;
-  }
-
-  .journey-phase__image,
-  .journey-phase__image img {
-    min-height: 0;
-    height: 230px;
   }
 
   .journey-phase__duration {
