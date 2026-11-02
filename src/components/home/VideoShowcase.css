@@ -1,0 +1,469 @@
+/* =====================================================
+   SECTION 5: VIDEO SHOWCASE — THEME
+   Royal blue, neon lime, white and black.
+   ===================================================== */
+
+.video-showcase {
+  --vs-blue: #1800ff;
+  --vs-lime: #c8ff00;
+  --vs-white: #ffffff;
+  --vs-black: #080808;
+
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  overflow: hidden;
+
+  padding: clamp(2rem, 5vw, 4.5rem) clamp(1rem, 4vw, 3rem);
+
+  color: var(--vs-white);
+
+  background:
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(106, 99, 255, 0.23),
+      transparent 35%
+    ),
+    var(--vs-blue);
+}
+
+.video-showcase *,
+.video-showcase *::before,
+.video-showcase *::after {
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   SECTION 5A: BACKGROUND DECORATION
+   ===================================================== */
+
+.video-showcase::before {
+  position: absolute;
+  z-index: -1;
+  top: -150px;
+  left: -130px;
+
+  width: 300px;
+  aspect-ratio: 1;
+
+  border: 2px solid rgba(200, 255, 0, 0.14);
+  border-radius: 50%;
+
+  content: "";
+  pointer-events: none;
+}
+
+.video-showcase::after {
+  position: absolute;
+  z-index: -1;
+  right: -100px;
+  bottom: -180px;
+
+  width: 340px;
+  aspect-ratio: 1;
+
+  border-radius: 50%;
+  background: rgba(103, 95, 255, 0.2);
+
+  content: "";
+  pointer-events: none;
+}
+
+/* =====================================================
+   SECTION 5B: CONTENT CONTAINER
+   ===================================================== */
+
+.video-showcase__inner {
+  width: min(100%, 1200px);
+  margin-inline: auto;
+}
+
+/* =====================================================
+   SECTION 5C: HEADING
+   Desktop heading is larger and easier to read.
+   ===================================================== */
+
+.video-showcase__header {
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+  text-align: center;
+}
+
+.video-showcase__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+
+  margin: 0 0 1rem;
+
+  color: var(--vs-lime);
+
+  font-size: clamp(0.75rem, 1vw, 0.9rem);
+  font-weight: 900;
+  letter-spacing: 0.18em;
+}
+
+.video-showcase__eyebrow span {
+  width: 36px;
+  height: 5px;
+
+  border-radius: 99px;
+  background: var(--vs-lime);
+}
+
+.video-showcase__title {
+  margin: 0;
+
+  color: var(--vs-white);
+
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 950;
+  letter-spacing: -0.055em;
+  line-height: 1.08;
+
+  text-wrap: balance;
+}
+
+.video-showcase__title span {
+  color: var(--vs-lime);
+}
+
+.video-showcase__description {
+  margin: 1rem 0 0;
+
+  color: rgba(255, 255, 255, 0.92);
+
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* =====================================================
+   SECTION 5D: VIDEO FRAME
+   Thick border and contrast separate the video
+   from the royal-blue page background.
+   ===================================================== */
+
+.video-showcase__frame {
+  position: relative;
+  isolation: isolate;
+
+  width: 100%;
+  aspect-ratio: 16 / 9;
+
+  overflow: hidden;
+
+  /* Thick neon-lime border */
+  border: 4px solid var(--vs-lime);
+  border-radius: 24px;
+
+  /* Dark video surface prevents color blending */
+  background: #050505;
+
+  /* Outer white separation and lime glow */
+  box-shadow:
+    0 0 0 3px rgba(255, 255, 255, 0.95),
+    0 0 0 7px rgba(200, 255, 0, 0.18),
+    0 24px 55px rgba(0, 0, 0, 0.32);
+}
+
+/* =====================================================
+   SECTION 5E: VIDEO ELEMENT
+   ===================================================== */
+
+.video-showcase__video {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+  background: #050505;
+}
+
+/* =====================================================
+   SECTION 5F: PLAY BUTTON
+   ===================================================== */
+
+.video-showcase__play {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: clamp(64px, 6vw, 88px);
+  aspect-ratio: 1;
+
+  padding: 0;
+
+  border: 3px solid var(--vs-white);
+  border-radius: 50%;
+
+  color: var(--vs-black);
+  background: var(--vs-lime);
+
+  cursor: pointer;
+
+  transform: translate(-50%, -50%);
+
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease;
+}
+
+.video-showcase__play-icon {
+  display: block;
+
+  margin-left: 4px;
+
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  line-height: 1;
+}
+
+.video-showcase__play:focus-visible {
+  outline: 3px solid var(--vs-white);
+  outline-offset: 6px;
+}
+
+/* =====================================================
+   SECTION 5G: DURATION BADGE
+   ===================================================== */
+
+.video-showcase__duration {
+  position: absolute;
+  z-index: 3;
+  right: clamp(0.8rem, 2vw, 1.25rem);
+  bottom: clamp(0.8rem, 2vw, 1.25rem);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 34px;
+  padding: 0.55rem 0.9rem;
+
+  border: 2px solid var(--vs-black);
+  border-radius: 999px;
+
+  color: var(--vs-black);
+  background: var(--vs-lime);
+
+  font-size: 0.75rem;
+  font-weight: 950;
+  letter-spacing: 0.07em;
+  line-height: 1;
+}
+
+/* =====================================================
+   SECTION 5H: VIDEO ERROR STATE
+   ===================================================== */
+
+.video-showcase__error {
+  position: absolute;
+  z-index: 4;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1rem;
+
+  color: var(--vs-white);
+  background: rgba(5, 5, 5, 0.97);
+
+  text-align: center;
+}
+
+.video-showcase__error p {
+  margin: 0.3rem 0;
+
+  font-size: clamp(0.8rem, 1.4vw, 1.1rem);
+  line-height: 1.5;
+}
+
+.video-showcase__retry {
+  margin-top: 0.8rem;
+  padding: 0.65rem 1.2rem;
+
+  border: 2px solid var(--vs-black);
+  border-radius: 999px;
+
+  color: var(--vs-black);
+  background: var(--vs-lime);
+
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 850;
+
+  cursor: pointer;
+}
+
+/* =====================================================
+   SECTION 5I: FOOTER ACCENT
+   ===================================================== */
+
+.video-showcase__footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+
+  margin-top: 1.5rem;
+}
+
+.video-showcase__footer span {
+  width: clamp(24px, 4vw, 46px);
+  height: 4px;
+
+  border-radius: 99px;
+  background: var(--vs-lime);
+}
+
+.video-showcase__footer p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.9);
+
+  font-size: clamp(0.6rem, 1vw, 0.8rem);
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* =====================================================
+   SECTION 5J: DESKTOP ENHANCEMENTS
+   ===================================================== */
+
+@media (min-width: 1024px) {
+  .video-showcase {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .video-showcase__inner {
+    max-width: 1200px;
+  }
+
+  .video-showcase__header {
+    margin-bottom: 2.5rem;
+  }
+
+  .video-showcase__title {
+    font-size: clamp(3.2rem, 4.5vw, 4.5rem);
+  }
+
+  .video-showcase__description {
+    margin-top: 1.1rem;
+  }
+
+  .video-showcase__frame {
+    border-width: 5px;
+    border-radius: 26px;
+  }
+}
+
+/* =====================================================
+   SECTION 5K: HOVER EFFECTS
+   ===================================================== */
+
+@media (hover: hover) and (pointer: fine) {
+  .video-showcase__play:hover {
+    transform: translate(-50%, -50%) scale(1.08);
+    box-shadow: 0 0 35px rgba(200, 255, 0, 0.4);
+  }
+
+  .video-showcase__retry:hover {
+    background: var(--vs-white);
+  }
+}
+
+/* =====================================================
+   SECTION 5L: MOBILE
+   Preserve the existing mobile layout and spacing.
+   Only strengthen the video border.
+   ===================================================== */
+
+@media (max-width: 600px) {
+  .video-showcase {
+    padding: 2rem 1rem 1.75rem;
+  }
+
+  .video-showcase__header {
+    margin-bottom: 1.1rem;
+  }
+
+  .video-showcase__eyebrow {
+    margin-bottom: 0.6rem;
+    font-size: 0.65rem;
+  }
+
+  .video-showcase__title {
+    font-size: clamp(1.65rem, 7.5vw, 2.5rem);
+    line-height: 1.05;
+  }
+
+  .video-showcase__description {
+    max-width: 300px;
+    margin: 0.6rem auto 0;
+
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  .video-showcase__frame {
+    border-width: 3px;
+    border-radius: 14px;
+
+    box-shadow:
+      0 0 0 2px rgba(255, 255, 255, 0.95),
+      0 0 0 5px rgba(200, 255, 0, 0.18),
+      0 12px 30px rgba(0, 0, 0, 0.25);
+  }
+
+  .video-showcase__play {
+    width: 48px;
+    border-width: 2px;
+  }
+
+  .video-showcase__play-icon {
+    font-size: 1.2rem;
+  }
+
+  .video-showcase__duration {
+    right: 0.45rem;
+    bottom: 0.45rem;
+
+    min-height: 24px;
+    padding: 0.35rem 0.55rem;
+
+    font-size: 0.58rem;
+  }
+
+  .video-showcase__footer {
+    gap: 0.5rem;
+    margin-top: 0.9rem;
+  }
+
+  .video-showcase__footer p {
+    font-size: 0.52rem;
+    letter-spacing: 0.06em;
+  }
+}
+
+/* =====================================================
+   SECTION 5M: REDUCED MOTION
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .video-showcase__play {
+    transition: none;
+  }
+}

@@ -1,0 +1,625 @@
+/* =========================================================
+   CURRENT PROJECTS SECTION
+   SXC Electric Blue / Neon Lime identity
+   ========================================================= */
+
+.current-projects {
+  padding: 75px 5%;
+  min-height: 55vh;
+
+  background:
+    radial-gradient(ellipse at 50% 0%, #edf3ff, transparent 60%),
+    #f6f8fc;
+}
+
+
+/* =========================================================
+   CURRENT PROJECTS HEADING
+   Section label, title, and description
+   ========================================================= */
+
+.current-projects__heading {
+  max-width: 650px;
+  margin: 0 auto 38px;
+  text-align: center;
+}
+
+.current-projects__heading > span {
+  color: #1600f5;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.current-projects__heading h2 {
+  margin: 12px 0;
+
+  color: #101827;
+
+  font-size: clamp(32px, 5vw, 46px);
+  font-weight: 900;
+  letter-spacing: -1.5px;
+}
+
+.current-projects__heading h2 span {
+  color: #1600f5;
+}
+
+.current-projects__heading p {
+  color: #718096;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   CURRENT PROJECTS GRID
+   Responsive project card layout
+   ========================================================= */
+
+.current-projects__grid {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+
+/* =========================================================
+   PROJECT DETAIL PAGE
+   Main page layout and background
+   ========================================================= */
+
+
+/* =========================================================
+   PROJECT DETAIL BACK BUTTONS
+   Top and bottom navigation buttons
+   ========================================================= */
+
+
+/* =========================================================
+   PROJECT DETAIL HERO
+   Main project banner and identity
+   ========================================================= */
+
+
+/* Project hero top row */
+
+
+/* Project development status badge */
+
+
+/* Project main title */
+
+
+/* Project subtitle */
+
+
+/* Project short introduction */
+
+
+/* =========================================================
+   PROJECT META INFORMATION
+   Team, category, and other project details
+   ========================================================= */
+
+
+/* =========================================================
+   PROJECT DETAIL CONTENT SECTIONS
+   Reusable section container and typography
+   ========================================================= */
+
+
+/* Section eyebrow label */
+
+
+/* Section heading */
+
+
+/* Section paragraph */
+
+
+/* =========================================================
+   PROJECT IMAGE GALLERY
+   Gallery introduction and responsive image grid
+   ========================================================= */
+
+
+/* Individual gallery image card */
+
+
+/* Gallery card hover effect */
+
+
+/* Gallery image */
+
+
+/* Gallery image caption */
+
+
+/* =========================================================
+   PROJECT MODULES
+   Displays project features and functional modules
+   ========================================================= */
+
+
+/* =========================================================
+   PROJECT LEARNING AND BENEFITS
+   Two-column information layout
+   ========================================================= */
+
+
+/* Individual learning or benefit item */
+
+
+/* Item indicator */
+
+
+/* Item heading */
+
+
+/* Item description */
+
+
+/* Additional section subheading */
+
+
+/* =========================================================
+   PROJECT DISCLAIMER
+   Additional project information
+   ========================================================= */
+
+
+/* Bottom navigation button */
+
+
+/* =========================================================
+   FUTURE PROJECTS SECTION
+   SXC dark navy and neon-lime identity
+   ========================================================= */
+
+
+/* Future projects heading container */
+
+
+/* Future projects section label */
+
+
+/* Future projects title */
+
+
+/* Future projects description */
+
+
+/* =========================================================
+   FUTURE PROJECTS GRID
+   Responsive three-column card layout
+   ========================================================= */
+
+
+/* Individual future project card */
+
+
+/* Future project icon */
+
+
+/* Future project code */
+
+
+/* Future project title */
+
+
+/* Future project description */
+
+
+/* Coming soon status label */
+
+
+/* =========================================================
+   PROJECT IMAGE LIGHTBOX
+   Full-screen image preview overlay
+   ========================================================= */
+
+
+/* Lightbox main image */
+
+
+/* Lightbox image caption */
+
+
+/* Shared lightbox button styles */
+
+
+/* Lightbox close button */
+
+
+/* Lightbox previous and next buttons */
+
+
+/* Previous image navigation */
+
+
+/* Next image navigation */
+
+
+/* =========================================================
+   TABLET RESPONSIVE DESIGN
+   Adjust project grid for medium screens
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .current-projects__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* =========================================================
+   MOBILE RESPONSIVE DESIGN
+   Layout adjustments for screens up to 700px
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  /* Current projects section */
+
+  .current-projects {
+    padding: 45px 17px;
+  }
+
+  .current-projects__heading {
+    margin-bottom: 25px;
+  }
+
+  .current-projects__heading h2 {
+    font-size: 32px;
+  }
+
+  .current-projects__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 11px;
+  }
+
+
+  /* Project detail page */
+
+
+  /* Project detail content sections */
+
+
+  /* Learning and benefits layout */
+
+
+  /* Bottom navigation button */
+
+
+  /* Future projects section */
+
+
+  /* Project image gallery */
+
+
+  /* Image lightbox */
+}
+
+
+/* =========================================================
+   SMALL MOBILE RESPONSIVE DESIGN
+   Single-column project cards for narrow screens
+   ========================================================= */
+
+@media (max-width: 380px) {
+  .current-projects__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+/* =========================================================
+   PROJECT CARD
+   Main card layout, dimensions, and theme
+   ========================================================= */
+
+.project-card {
+  width: 100%;
+  min-width: 0;
+  min-height: 440px;
+  padding: 0;
+  overflow: hidden;
+
+  border: 1px solid #263954;
+  border-radius: 20px;
+
+  background: linear-gradient(145deg, #142b4b, #091326 75%);
+  color: #fff;
+
+  text-align: left;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+/* =========================================================
+   CARD HOVER EFFECT
+   ========================================================= */
+
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: #c8ff00;
+  box-shadow: 0 16px 36px rgba(8, 13, 54, 0.2);
+}
+
+
+/* =========================================================
+   KEYBOARD ACCESSIBILITY
+   Visible focus indicator for keyboard navigation
+   ========================================================= */
+
+.project-card:focus-visible {
+  outline: 3px solid #c8ff00;
+  outline-offset: 4px;
+}
+
+
+/* =========================================================
+   PROJECT IMAGE
+   Image container and hover zoom effect
+   ========================================================= */
+
+.project-card__image-wrap {
+  position: relative;
+
+  width: 100%;
+  height: 190px;
+  flex-shrink: 0;
+
+  overflow: hidden;
+  background: #172b48;
+}
+
+.project-card__image-wrap img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.35s ease;
+}
+
+.project-card:hover .project-card__image-wrap img {
+  transform: scale(1.04);
+}
+
+
+/* =========================================================
+   PROJECT NUMBER BADGE
+   ========================================================= */
+
+.project-card__number {
+  position: absolute;
+  left: 13px;
+  top: 13px;
+
+  padding: 6px 10px;
+  border-radius: 20px;
+
+  background: rgba(8, 13, 54, 0.85);
+  color: #fff;
+
+  font-size: 12px;
+  font-weight: 900;
+}
+
+
+/* =========================================================
+   PROJECT CODE BADGE
+   ========================================================= */
+
+.project-card__code {
+  position: absolute;
+  right: 13px;
+  top: 13px;
+
+  padding: 7px 10px;
+  border-radius: 20px;
+
+  background: #c8ff00;
+  color: #080d20;
+
+  font-size: 10px;
+  font-weight: 950;
+  letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   CARD CONTENT
+   Main content container
+   ========================================================= */
+
+.project-card__main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  padding: 17px 19px 16px;
+}
+
+
+/* =========================================================
+   PROJECT CATEGORY
+   ========================================================= */
+
+.project-card__category {
+  color: #c8ff00;
+
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 1.2px;
+}
+
+
+/* =========================================================
+   PROJECT TITLE
+   ========================================================= */
+
+.project-card__main h3 {
+  margin: 8px 0;
+
+  color: #fff;
+
+  font-size: 21px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+
+/* =========================================================
+   PROJECT DESCRIPTION
+   Restrict description to 3 lines
+   Standard and WebKit line-clamp properties included
+   ========================================================= */
+
+.project-card__description {
+  min-height: 52px;
+  margin: 0 0 9px;
+
+  color: #b8c5d8;
+
+  font-size: 11px;
+  line-height: 1.55;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   TEAM SIZE AND USER INFORMATION
+   ========================================================= */
+
+.project-card__team,
+.project-card__users {
+  margin: 4px 0;
+
+  color: #d1dbea;
+  font-size: 10px;
+}
+
+.project-card__team span,
+.project-card__users span {
+  display: inline-block;
+
+  min-width: 37px;
+  margin-right: 5px;
+
+  color: #8c9db5;
+
+  font-size: 9px;
+  font-weight: 900;
+}
+
+
+/* =========================================================
+   PROJECT HIGHLIGHTS
+   Feature tags displayed inside the card
+   ========================================================= */
+
+.project-card__highlights {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.project-card__highlights span {
+  padding: 6px 8px;
+  border-radius: 20px;
+
+  background: rgba(200, 255, 0, 0.12);
+  color: #d9ff58;
+
+  font-size: 9px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   CARD FOOTER
+   Footer information and arrow indicator
+   ========================================================= */
+
+.project-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: auto;
+  padding-top: 13px;
+
+  border-top: 1px solid #34445a;
+
+  color: #a5b3c7;
+
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 1px;
+}
+
+.project-card__arrow {
+  color: #c8ff00;
+  font-size: 19px;
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   Mobile and smaller screen adjustments
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .project-card {
+    min-height: 390px;
+    border-radius: 16px;
+  }
+
+  .project-card__image-wrap {
+    height: 155px;
+  }
+
+  .project-card__main {
+    padding: 15px;
+  }
+
+  .project-card__main h3 {
+    font-size: 19px;
+  }
+
+  .project-card__description {
+    font-size: 10px;
+  }
+
+  .project-card__highlights span {
+    font-size: 8px;
+    padding: 5px 7px;
+  }
+}

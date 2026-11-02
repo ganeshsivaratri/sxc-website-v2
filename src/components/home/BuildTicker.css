@@ -1,0 +1,316 @@
+/* ==========================================
+   SXC — SLANTED ANNOUNCEMENT MARQUEE
+   ========================================== */
+
+.build-ticker {
+  --sxc-lime: #c8ff00;
+  --sxc-blue: #1900ff;
+  --sxc-black: #080808;
+
+  position: sticky;
+  top: 0;
+  z-index: 40;
+
+  width: 100%;
+  isolation: isolate;
+
+  /*
+   * The strip has a slanted silhouette without
+   * rotating the page layout or causing overflow.
+   */
+  background: var(--sxc-lime);
+  color: var(--sxc-black);
+
+  clip-path: polygon(
+    0 13%,
+    100% 0,
+    100% 87%,
+    0 100%
+  );
+
+  margin-block: 0;
+}
+
+/* Inner strip */
+
+.build-ticker__inner {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  min-height: 76px;
+
+  padding-block: 12px;
+
+  background: var(--sxc-lime);
+}
+
+/* ------------------------------------------
+   FIXED LEFT LABEL
+   ------------------------------------------ */
+
+.build-ticker__label {
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  flex: 0 0 auto;
+
+  min-height: 48px;
+  padding: 0 22px 0 28px;
+
+  background: var(--sxc-lime);
+  color: var(--sxc-black);
+
+  font-size: clamp(0.9rem, 1.35vw, 1.15rem);
+  font-weight: 950;
+  line-height: 1;
+  letter-spacing: -0.045em;
+  white-space: nowrap;
+}
+
+.build-ticker__colon {
+  color: var(--sxc-blue);
+  font-weight: 1000;
+}
+
+/* ------------------------------------------
+   SCROLLING VIEWPORT
+   ------------------------------------------ */
+
+.build-ticker__viewport {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  flex: 1 1 auto;
+  min-width: 0;
+
+  overflow: hidden;
+}
+
+/* Subtle fade at the moving-text edges */
+
+.build-ticker__viewport::before,
+.build-ticker__viewport::after {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+
+  width: 15px;
+
+  z-index: 2;
+  pointer-events: none;
+}
+
+.build-ticker__viewport::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    var(--sxc-lime),
+    transparent
+  );
+}
+
+.build-ticker__viewport::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    var(--sxc-lime),
+    transparent
+  );
+}
+
+/* ------------------------------------------
+   CONTINUOUS MARQUEE
+   ------------------------------------------ */
+
+.build-ticker__track {
+  display: flex;
+  align-items: center;
+
+  flex: 0 0 auto;
+  width: max-content;
+
+  animation: sxc-marquee 24s linear infinite;
+
+  will-change: transform;
+}
+
+.build-ticker__group {
+  display: flex;
+  align-items: center;
+
+  flex: 0 0 auto;
+}
+
+.build-ticker__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 25px;
+
+  flex: 0 0 auto;
+
+  padding-right: 25px;
+
+  white-space: nowrap;
+
+  font-size: clamp(0.9rem, 1.35vw, 1.15rem);
+  font-weight: 950;
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+
+.build-ticker__word {
+  display: inline-block;
+}
+
+.build-ticker__separator {
+  display: inline-block;
+
+  color: var(--sxc-blue);
+
+  font-size: 1.25em;
+  font-weight: 1000;
+  line-height: 0.8;
+}
+
+/*
+ * Two identical groups are rendered.
+ * Moving exactly 50% creates the seamless loop.
+ */
+
+@keyframes sxc-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* ------------------------------------------
+   INTERACTION
+   ------------------------------------------ */
+
+@media (hover: hover) and (pointer: fine) {
+  .build-ticker__viewport:hover .build-ticker__track {
+    animation-play-state: paused;
+  }
+}
+
+/* ------------------------------------------
+   TABLET
+   ------------------------------------------ */
+
+@media (max-width: 900px) {
+  .build-ticker__inner {
+    min-height: 64px;
+    padding-block: 10px;
+  }
+
+  .build-ticker__label {
+    min-height: 42px;
+    padding-inline: 18px;
+    font-size: 0.95rem;
+  }
+
+  .build-ticker__item {
+    gap: 19px;
+    padding-right: 19px;
+    font-size: 0.95rem;
+  }
+
+  .build-ticker__track {
+    animation-duration: 22s;
+  }
+}
+
+/* ------------------------------------------
+   MOBILE
+   ------------------------------------------ */
+
+@media (max-width: 600px) {
+  .build-ticker__inner {
+    min-height: 58px;
+    padding-block: 9px;
+  }
+
+  .build-ticker__label {
+    min-height: 40px;
+    padding-left: 14px;
+    padding-right: 10px;
+
+    gap: 3px;
+
+    font-size: 0.78rem;
+    letter-spacing: -0.045em;
+  }
+
+  .build-ticker__item {
+    gap: 13px;
+    padding-right: 13px;
+
+    font-size: 0.8rem;
+    letter-spacing: -0.025em;
+  }
+
+  .build-ticker__separator {
+    font-size: 1.15em;
+  }
+
+  .build-ticker__viewport::before,
+  .build-ticker__viewport::after {
+    width: 8px;
+  }
+
+  .build-ticker__track {
+    animation-duration: 19s;
+  }
+}
+
+/* ------------------------------------------
+   EXTRA-SMALL MOBILE
+   ------------------------------------------ */
+
+@media (max-width: 360px) {
+  .build-ticker__inner {
+    min-height: 52px;
+  }
+
+  .build-ticker__label {
+    padding-left: 10px;
+    padding-right: 7px;
+    font-size: 0.7rem;
+  }
+
+  .build-ticker__item {
+    gap: 10px;
+    padding-right: 10px;
+    font-size: 0.72rem;
+  }
+}
+
+/* ------------------------------------------
+   ACCESSIBILITY
+   ------------------------------------------ */
+
+@media (prefers-reduced-motion: reduce) {
+  .build-ticker__track {
+    animation: none;
+  }
+
+  .build-ticker__viewport {
+    overflow-x: auto;
+  }
+}

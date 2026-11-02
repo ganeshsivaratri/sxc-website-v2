@@ -1,0 +1,704 @@
+/* =====================================================
+   SECTION 3: INTERVIEW PRIORITY
+   White background with navy, electric blue and lime.
+   All selectors are scoped to this section.
+   ===================================================== */
+
+.interview-priority {
+  --ip-blue: #2110ff;
+  --ip-lime: #c8ff00;
+  --ip-navy: #090d28;
+  --ip-muted: #626b89;
+  --ip-border: #d9dcf4;
+  --ip-soft: #f6f7ff;
+
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  padding: clamp(30px, 4vw, 54px) clamp(16px, 4vw, 48px);
+  overflow: hidden;
+
+  color: var(--ip-navy);
+  background: #ffffff;
+}
+
+.interview-priority *,
+.interview-priority *::before,
+.interview-priority *::after {
+  box-sizing: border-box;
+}
+
+/* Soft background decoration inspired by the reference.
+   These decorations never intercept clicks. */
+
+.interview-priority::before,
+.interview-priority::after {
+  position: absolute;
+  z-index: -1;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: #f1f2ff;
+  content: "";
+  pointer-events: none;
+}
+
+.interview-priority::before {
+  top: -125px;
+  left: -100px;
+}
+
+.interview-priority::after {
+  right: -125px;
+  bottom: -130px;
+}
+
+/* Keep content centered and prevent oversized layouts. */
+
+.interview-priority__inner {
+  width: min(100%, 1120px);
+  margin-inline: auto;
+}
+
+/* =====================================================
+   SECTION 3A: HEADING
+   ===================================================== */
+
+.interview-priority__header {
+  margin: 0 auto 26px;
+  text-align: center;
+}
+
+.interview-priority__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  margin: 0 0 14px;
+  padding: 8px 15px;
+  border-radius: 999px;
+
+  color: var(--ip-navy);
+  background: var(--ip-lime);
+
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  line-height: 1.2;
+}
+
+.interview-priority__eyebrow span {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 8px;
+  border-radius: 50%;
+  background: var(--ip-blue);
+}
+
+.interview-priority__title {
+  margin: 0 auto;
+
+  color: var(--ip-navy);
+
+  font-size: clamp(30px, 4.6vw, 58px);
+  font-weight: 950;
+  letter-spacing: -0.065em;
+  line-height: 0.99;
+
+  text-wrap: balance;
+}
+
+.interview-priority__title span {
+  color: var(--ip-blue);
+}
+
+.interview-priority__description {
+  max-width: 600px;
+  margin: 12px auto 0;
+
+  color: var(--ip-muted);
+
+  font-size: clamp(12px, 1.5vw, 16px);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* =====================================================
+   SECTION 3B: OPTION PILLS
+   Three columns on desktop and mobile.
+   ===================================================== */
+
+.interview-priority__options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  width: 100%;
+}
+
+/* Default unselected option. */
+
+.interview-priority .priority-pill {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 9px;
+
+  min-width: 0;
+  min-height: 49px;
+  padding: 8px 12px;
+
+  border: 1.5px solid var(--ip-blue);
+  border-radius: 999px;
+
+  color: var(--ip-navy);
+  background: #ffffff;
+
+  font-family: inherit;
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    border-color 160ms ease,
+    transform 160ms ease;
+}
+
+/* Subtle hover effect. */
+
+.interview-priority .priority-pill:hover {
+  background: #f0efff;
+  border-color: var(--ip-blue);
+  transform: translateY(-1px);
+}
+
+/* Keyboard users get a clear focus indicator. */
+
+.interview-priority .priority-pill:focus-visible,
+.interview-priority .priority-reset:focus-visible,
+.interview-priority .priority-submit:focus-visible,
+.interview-priority .priority-try-again:focus-visible {
+  outline: 3px solid var(--ip-blue);
+  outline-offset: 3px;
+}
+
+/* Circular priority number. */
+
+.interview-priority .priority-pill__number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 27px;
+  height: 27px;
+  flex: 0 0 27px;
+
+  border: 1px solid #c7cbea;
+  border-radius: 50%;
+
+  color: var(--ip-blue);
+  background: #ffffff;
+
+  font-size: 10px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+/* Option label. */
+
+.interview-priority .priority-pill__label {
+  min-width: 0;
+
+  font-size: clamp(11px, 1.2vw, 15px);
+  font-weight: 800;
+  line-height: 1.2;
+
+  overflow-wrap: anywhere;
+}
+
+/* Selected pill uses lime instead of blue. */
+
+.interview-priority .priority-pill--selected {
+  border-color: var(--ip-lime);
+  color: var(--ip-navy);
+  background: var(--ip-lime);
+}
+
+.interview-priority .priority-pill--selected:hover {
+  background: #d8ff42;
+}
+
+.interview-priority .priority-pill--selected .priority-pill__number {
+  border-color: rgba(9, 13, 40, 0.22);
+  color: #ffffff;
+  background: var(--ip-blue);
+}
+
+/* =====================================================
+   SECTION 3C: COUNTER, RESET AND SUBMIT
+   ===================================================== */
+
+.interview-priority__controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  margin-top: 18px;
+}
+
+.interview-priority__count {
+  margin: 0;
+
+  color: var(--ip-muted);
+
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.interview-priority__count strong {
+  color: var(--ip-blue);
+  font-size: 19px;
+  font-weight: 950;
+}
+
+.interview-priority__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 9px;
+}
+
+/* Shared action button typography. */
+
+.interview-priority .priority-reset,
+.interview-priority .priority-submit,
+.interview-priority .priority-try-again {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  min-height: 42px;
+  padding: 10px 19px;
+
+  border-radius: 999px;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.035em;
+  line-height: 1.2;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    border-color 160ms ease,
+    transform 160ms ease,
+    opacity 160ms ease;
+}
+
+/* Reset is an outlined secondary action. */
+
+.interview-priority .priority-reset {
+  border: 1px solid var(--ip-blue);
+  color: var(--ip-blue);
+  background: #ffffff;
+}
+
+.interview-priority .priority-reset:hover:not(:disabled) {
+  color: #ffffff;
+  background: var(--ip-blue);
+}
+
+/* Main submit action. */
+
+.interview-priority .priority-submit,
+.interview-priority .priority-try-again {
+  border: 1px solid var(--ip-lime);
+  color: var(--ip-navy);
+  background: var(--ip-lime);
+}
+
+.interview-priority .priority-submit:hover:not(:disabled),
+.interview-priority .priority-try-again:hover {
+  background: #d8ff42;
+  transform: translateY(-1px);
+}
+
+/* Disabled submit/reset states. */
+
+.interview-priority .priority-submit:disabled,
+.interview-priority .priority-reset:disabled {
+  opacity: 0.42;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* =====================================================
+   SECTION 3D: FEEDBACK
+   Appears inline without navigation or a modal.
+   ===================================================== */
+
+.interview-priority .priority-feedback {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+
+  margin-top: 18px;
+  padding: 19px 22px;
+
+  border: 1px solid transparent;
+  border-radius: 17px;
+
+  animation: ip-feedback-in 220ms ease-out both;
+}
+
+/* Correct answer feedback. */
+
+.interview-priority .priority-feedback--correct {
+  border-color: #b8f078;
+  background: #f2ffe9;
+}
+
+/* Green check icon. */
+
+.interview-priority .priority-feedback__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
+
+  border-radius: 50%;
+
+  color: #ffffff;
+  background: #18b83b;
+
+  font-size: 30px;
+  font-weight: 900;
+}
+
+/* Feedback text. */
+
+.interview-priority .priority-feedback__content {
+  min-width: 0;
+}
+
+.interview-priority .priority-feedback__content h3 {
+  margin: 0;
+
+  color: var(--ip-navy);
+
+  font-size: clamp(15px, 2vw, 21px);
+  font-weight: 950;
+  line-height: 1.25;
+}
+
+.interview-priority .priority-feedback__content p {
+  margin: 5px 0 0;
+
+  color: #424b64;
+
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Incorrect answer feedback. */
+
+.interview-priority .priority-feedback--incorrect {
+  align-items: flex-start;
+  border-color: #d9dcf4;
+  background: #f7f7ff;
+}
+
+.interview-priority .priority-feedback__content--full {
+  width: 100%;
+}
+
+/* Suggested correct order. */
+
+.interview-priority .priority-answer-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px 18px;
+
+  margin: 14px 0;
+  padding-left: 24px;
+
+  color: var(--ip-navy);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.interview-priority .priority-answer-list li {
+  padding-left: 2px;
+  line-height: 1.5;
+}
+
+/* Try-again action. */
+
+.interview-priority .priority-try-again {
+  margin-top: 5px;
+}
+
+/* Feedback animation. */
+
+@keyframes ip-feedback-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =====================================================
+   TABLET RESPONSIVENESS
+   ===================================================== */
+
+@media (min-width: 700px) {
+  .interview-priority__header {
+    margin-bottom: 28px;
+  }
+
+  .interview-priority__options {
+    gap: 11px;
+  }
+
+  .interview-priority .priority-pill {
+    min-height: 51px;
+    padding-inline: 15px;
+  }
+}
+
+/* =====================================================
+   MOBILE RESPONSIVENESS
+   Keep all nine options in a compact 3 × 3 grid.
+   ===================================================== */
+
+@media (max-width: 600px) {
+  .interview-priority {
+    padding: 27px 15px 30px;
+  }
+
+  .interview-priority::before,
+  .interview-priority::after {
+    width: 110px;
+    height: 110px;
+  }
+
+  .interview-priority::before {
+    top: -80px;
+    left: -70px;
+  }
+
+  .interview-priority::after {
+    right: -75px;
+    bottom: -80px;
+  }
+
+  .interview-priority__header {
+    margin-bottom: 20px;
+  }
+
+  .interview-priority__eyebrow {
+    gap: 7px;
+    margin-bottom: 11px;
+    padding: 7px 12px;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+  }
+
+  .interview-priority__title {
+    font-size: clamp(27px, 7.5vw, 39px);
+    letter-spacing: -0.06em;
+    line-height: 1.02;
+  }
+
+  .interview-priority__description {
+    max-width: 340px;
+    margin-top: 10px;
+    font-size: 12px;
+    line-height: 1.45;
+  }
+
+  /* Preserve three columns on mobile. */
+
+  .interview-priority__options {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .interview-priority .priority-pill {
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+
+    min-width: 0;
+    min-height: 67px;
+    padding: 8px 4px;
+
+    border-radius: 15px;
+    text-align: center;
+  }
+
+  .interview-priority .priority-pill__number {
+    width: 22px;
+    height: 22px;
+    flex-basis: 22px;
+
+    font-size: 9px;
+  }
+
+  .interview-priority .priority-pill__label {
+    display: block;
+    width: 100%;
+
+    font-size: clamp(10px, 2.8vw, 12px);
+    line-height: 1.15;
+    text-align: center;
+
+    overflow-wrap: anywhere;
+  }
+
+  /* Keep the counter and actions on the same row. */
+
+  .interview-priority__controls {
+    align-items: center;
+    gap: 7px;
+    margin-top: 15px;
+  }
+
+  .interview-priority__count {
+    font-size: 11px;
+  }
+
+  .interview-priority__count strong {
+    font-size: 16px;
+  }
+
+  .interview-priority__buttons {
+    gap: 6px;
+  }
+
+  .interview-priority .priority-reset,
+  .interview-priority .priority-submit,
+  .interview-priority .priority-try-again {
+    min-height: 38px;
+    padding: 9px 12px;
+    font-size: 10px;
+    letter-spacing: 0;
+  }
+
+  /* Compact success message. */
+
+  .interview-priority .priority-feedback {
+    gap: 12px;
+    margin-top: 15px;
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  .interview-priority .priority-feedback__icon {
+    width: 39px;
+    height: 39px;
+    flex-basis: 39px;
+    font-size: 23px;
+  }
+
+  .interview-priority .priority-feedback__content h3 {
+    font-size: 14px;
+  }
+
+  .interview-priority .priority-feedback__content p {
+    font-size: 12px;
+  }
+
+  /* Keep the answer key readable on smaller screens. */
+
+  .interview-priority .priority-answer-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px 12px;
+    margin: 12px 0;
+    padding-left: 21px;
+    font-size: 11px;
+  }
+}
+
+/* Extra-small phones. */
+
+@media (max-width: 360px) {
+  .interview-priority {
+    padding-inline: 11px;
+  }
+
+  .interview-priority__title {
+    font-size: 26px;
+  }
+
+  .interview-priority__options {
+    gap: 6px;
+  }
+
+  .interview-priority .priority-pill {
+    min-height: 64px;
+    padding-inline: 3px;
+  }
+
+  .interview-priority .priority-pill__label {
+    font-size: 10px;
+  }
+
+  .interview-priority .priority-pill__number {
+    width: 20px;
+    height: 20px;
+    flex-basis: 20px;
+  }
+
+  .interview-priority__controls {
+    flex-wrap: wrap;
+  }
+
+  .interview-priority__buttons {
+    margin-left: auto;
+  }
+
+  .interview-priority .priority-reset,
+  .interview-priority .priority-submit {
+    padding-inline: 9px;
+    font-size: 9px;
+  }
+}
+
+/* =====================================================
+   ACCESSIBILITY: REDUCED MOTION
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .interview-priority *,
+  .interview-priority *::before,
+  .interview-priority *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .interview-priority .priority-pill:hover,
+  .interview-priority .priority-submit:hover,
+  .interview-priority .priority-try-again:hover {
+    transform: none;
+  }
+}
