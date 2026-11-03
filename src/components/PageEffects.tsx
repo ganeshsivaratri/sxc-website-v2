@@ -101,6 +101,16 @@ export function MetaManager() {
     setMeta('property', 'og:description', meta.description)
     setMeta('name', 'twitter:title', meta.title)
     setMeta('name', 'twitter:description', meta.description)
+
+    const pageUrl = `https://sxc.codpox.com${pathname === '/' ? '/' : pathname}`
+    let canonical = document.head.querySelector('link[rel="canonical"]')
+    if (!canonical) {
+      canonical = document.createElement('link')
+      canonical.setAttribute('rel', 'canonical')
+      document.head.appendChild(canonical)
+    }
+    canonical.setAttribute('href', pageUrl)
+    setMeta('property', 'og:url', pageUrl)
   }, [pathname])
 
   return null
