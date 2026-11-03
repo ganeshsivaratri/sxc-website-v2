@@ -28,6 +28,7 @@ import RefundPolicy from './pages/RefundPolicy'
 import TermsAndConditions from './pages/TermsAndConditions'
 import Benefits from './pages/Benefits'
 import Footer from './components/Footer'
+import FloatingActions from './components/FloatingActions'
 import HomeCTA from './components/home/HomeCTA'
 
 
@@ -95,6 +96,7 @@ function App() {
       </Routes>
         </PageShell>
         <Footer />
+        <FloatingActions />
 
     </BrowserRouter>
   )
