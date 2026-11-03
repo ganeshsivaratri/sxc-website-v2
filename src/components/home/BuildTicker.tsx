@@ -6,13 +6,18 @@ const services = [
   'WEBSITES',
   'SOFTWARE',
   'CONNECTIONS',
+  'AI AGENTS',
+  'DASHBOARDS',
+  'SAAS',
+  'ONLINE STORES',
+  'STARTUPS',
 ]
 
 function BuildTicker() {
   return (
     <section
       className="build-ticker"
-      aria-label="We build projects, apps, websites, software and connections"
+      aria-label="We build projects, apps, websites, software, connections, AI agents, dashboards, SaaS, online stores and startups"
     >
       <div className="build-ticker__inner">
 

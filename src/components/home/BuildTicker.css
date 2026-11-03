@@ -141,7 +141,7 @@
   flex: 0 0 auto;
   width: max-content;
 
-  animation: sxc-marquee 24s linear infinite;
+  animation: sxc-marquee 44s linear infinite;
 
   will-change: transform;
 }
@@ -232,7 +232,7 @@
   }
 
   .build-ticker__track {
-    animation-duration: 22s;
+    animation-duration: 40s;
   }
 }
 
@@ -275,7 +275,7 @@
   }
 
   .build-ticker__track {
-    animation-duration: 19s;
+    animation-duration: 35s;
   }
 }
 
