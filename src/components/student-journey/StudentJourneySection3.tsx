@@ -1,5 +1,6 @@
 
 import './StudentJourneySection3.css'
+import { Link } from 'react-router-dom'
 
 import phase8Image from '../../assets/images/phase-8-project-review.webp'
 import phase9Image from '../../assets/images/phase-9-project-deployment.webp'
@@ -210,15 +211,14 @@ function StudentJourneySection3() {
                 )}
 
                 {phase.showPlansButton && (
-                  <a
-                    href="#"
+                  <Link
+                    to="/plans-beyond"
                     className="sj3-plans-button"
-                    onClick={(event) => event.preventDefault()}
                     aria-label="Check the Rejoin Plans"
                   >
                     Check Plans
                     <span aria-hidden="true">→</span>
-                  </a>
+                  </Link>
                 )}
 
                 {phase.closing && (
