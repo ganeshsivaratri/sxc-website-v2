@@ -105,8 +105,7 @@ function TermsAndConditions() {
           <h2><span>7.</span> Certificates</h2>
           <p>
             Participants receive an SXC project certificate after meeting the
-            participation and completion requirements, which include at least
-            80% attendance, assigned task completion, genuine contribution to
+            participation and completion requirements, which include at least 75% attendance and at least 7 of every 10 meetings, assigned task completion, genuine contribution to
             the project, team collaboration and project deliverables.
             Registration alone does not guarantee a certificate.
           </p>
