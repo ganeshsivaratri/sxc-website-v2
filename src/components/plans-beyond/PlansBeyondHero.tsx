@@ -70,7 +70,12 @@ export default function PlansBeyondHero() {
             </p>
           </div>
 
-          <a href="#contact" className="plans-contact-button">
+          <a
+            href="https://wa.me/919490354451?text=Hi%20SXC%2C%20I%20need%20help%20choosing%20a%20plan."
+            target="_blank"
+            rel="noreferrer"
+            className="plans-contact-button"
+          >
             Contact Us <span>↗</span>
           </a>
         </div>
