@@ -5,7 +5,7 @@ function Home() {
   return (
     <main className="home-page">
       <HomeHero />
-    </main>
+      </main>
   )
 }
 
