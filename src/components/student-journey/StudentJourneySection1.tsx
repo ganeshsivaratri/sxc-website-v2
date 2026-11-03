@@ -11,6 +11,7 @@ const journeyPhases = [
     title: 'Join SXC',
     subtitle: 'Become a Part of the Community',
     image: joinSXCImage,
+    imageContain: true,
     imageAlt: 'Student joining the SXC community',
     imagePosition: 'right',
     points: [
@@ -25,6 +26,7 @@ const journeyPhases = [
     title: 'Project Allocation',
     subtitle: 'Find Your Project and Team',
     image: projectAllocationImage,
+    imageContain: false,
     imageAlt: 'SXC members collaborating during project allocation',
     imagePosition: 'left',
     points: [
@@ -39,6 +41,7 @@ const journeyPhases = [
     title: 'Learn the Stack',
     subtitle: 'Prepare Yourself Before Building',
     image: learnStackImage,
+    imageContain: false,
     imageAlt: 'Full-stack development technologies',
     imagePosition: 'right',
     points: [
@@ -119,7 +122,7 @@ function StudentJourneySection1() {
 
             {/* PHASE IMAGE */}
 
-            <div className="journey-phase__image">
+            <div className={phase.imageContain ? 'journey-phase__image journey-phase__image--contain' : 'journey-phase__image'}>
               <img
                 src={phase.image}
                 alt={phase.imageAlt}

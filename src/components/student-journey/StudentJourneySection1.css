@@ -379,3 +379,13 @@
     margin-top: 17px;
   }
 }
+
+/* Portrait cut-out images (Phase 01) — full person visible, no crop */
+.journey-phase__image--contain img {
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.journey-phase:hover .journey-phase__image--contain img {
+  transform: none;
+}
