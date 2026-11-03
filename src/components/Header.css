@@ -447,3 +447,37 @@
     transition: none;
   }
 }
+
+/* Header separation — deep navy band + lime hairline,
+   so the header reads apart from the electric-blue hero */
+.sxc-header {
+  background-color: #101039;
+  border-bottom: 3px solid var(--sxc-neon-lime);
+}
+
+.sxc-header.solid,
+.sxc-header.scrolled {
+  background-color: #101039;
+}
+
+/* Header — founder's exact palette (swatches, 2026-11-03) */
+.sxc-header {
+  background-color: #0b0e1b;
+  border-bottom: 3px solid #d3fd51;
+}
+
+.sxc-header.solid,
+.sxc-header.scrolled {
+  background-color: #0b0e1b;
+}
+
+/* Header restored to the original — founder's call */
+.sxc-header {
+  background-color: var(--sxc-electric-blue);
+  border-bottom: none;
+}
+
+.sxc-header.solid,
+.sxc-header.scrolled {
+  background-color: var(--sxc-deep-blue);
+}
