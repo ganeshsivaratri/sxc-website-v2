@@ -83,6 +83,8 @@ const pageLinks = [
 
 const legalLinks = [
   { label: 'Privacy Policy', href: '/privacy-policy' },
+  { label: 'Refund Policy', href: '/refund-policy' },
+  { label: 'Terms & Conditions', href: '/terms-and-conditions' },
 ]
 
 export default function Footer() {
