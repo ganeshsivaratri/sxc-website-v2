@@ -102,9 +102,9 @@ function HomeHero() {
             Explore Projects <span aria-hidden="true">⟶</span>
           </Link>
 
-          <a className="home-button home-button--outline" href="#journey">
+          <Link className="home-button home-button--outline" to="/student-journey">
             Start Your Journey <span aria-hidden="true">↗</span>
-          </a>
+          </Link>
         </div>
 
         <p className="home-hero__tagline">
