@@ -1,6 +1,73 @@
-
+import { Link } from 'react-router-dom'
 import studentImage from '../../assets/images/sxc-student.png'
 import './WhatIsSXC.css'
+
+function WebsiteIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="m8 7-4.5 5L8 17" />
+      <path d="m16 7 4.5 5L16 17" />
+    </svg>
+  )
+}
+
+function MobileIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <rect x="7" y="2.5" width="10" height="19" rx="2.5" />
+      <path d="M10.8 18.8h2.4" />
+    </svg>
+  )
+}
+
+function LaunchIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M22 2 11 13" />
+      <path d="M22 2 15 22l-4-9-9-4Z" />
+    </svg>
+  )
+}
+
+function CheckIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="3"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="m4.5 12.6 5 5L19.5 7" />
+    </svg>
+  )
+}
 
 const benefits = [
   {
@@ -25,17 +92,17 @@ const benefits = [
 
 const projectTypes = [
   {
-    icon: '⌘',
+    icon: <WebsiteIcon />,
     title: 'Websites',
     description: 'Build and launch real websites.',
   },
   {
-    icon: '▣',
+    icon: <MobileIcon />,
     title: 'Mobile Apps',
     description: 'Turn ideas into working apps.',
   },
   {
-    icon: '↗',
+    icon: <LaunchIcon />,
     title: 'Live Deployment',
     description: 'Deploy projects people can access.',
   },
@@ -66,7 +133,7 @@ function WhatIsSXC() {
           </header>
 
           <div className="sxc-about__visual">
-            <div className="sxc-about__visual-glow" />
+            <div className="sxc-about__visual-circle" aria-hidden="true" />
 
             <img
               src={studentImage}
@@ -113,7 +180,9 @@ function WhatIsSXC() {
           <div className="sxc-about__benefit-list">
             {benefits.map((benefit) => (
               <article className="sxc-about__benefit" key={benefit.number}>
-                <span className="sxc-about__check">✓</span>
+                <span className="sxc-about__check">
+                  <CheckIcon />
+                </span>
 
                 <div>
                   <h4>{benefit.title}</h4>
@@ -137,19 +206,19 @@ function WhatIsSXC() {
 
         {/* Buttons */}
         <div className="sxc-about__actions">
-          <a
-            href="#45-days"
+          <Link
+            to="/student-journey"
             className="sxc-about__button sxc-about__button--primary"
           >
             See how the 45 days go <span>→</span>
-          </a>
+          </Link>
 
-          <a
-            href="#vision"
+          <Link
+            to="/projects"
             className="sxc-about__button sxc-about__button--secondary"
           >
-            Our Vision <span>↗</span>
-          </a>
+            Projects <span>↗</span>
+          </Link>
         </div>
 
       </div>

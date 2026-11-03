@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 /* Shared components */
 
 import Header from './components/Header'
+import { ScrollToTop, PageShell } from './components/PageEffects'
 import BuildTicker from './components/home/BuildTicker'
 import InterviewPriority from './components/home/InterviewPriority'
 import VideoShowcase from './components/home/VideoShowcase'
@@ -24,6 +25,7 @@ import PlansBeyond from './pages/PlansBeyond'
 import JoinNow from './pages/JoinNow'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import Footer from './components/Footer'
+import HomeCTA from './components/home/HomeCTA'
 
 
 /* =========================================================
@@ -36,11 +38,13 @@ function App() {
 
       {/* Shared website header */}
 
+      <ScrollToTop />
       <Header />
 
       {/* Application routes */}
 
-      <Routes>
+      <PageShell>
+        <Routes>
 
         {/* HOME PAGE */}
 
@@ -54,6 +58,7 @@ function App() {
               <VideoShowcase />
               <FakeVsReal />
               <WhatIsSXC />
+              <HomeCTA />
             </>
           }
         />
@@ -82,6 +87,7 @@ function App() {
         <Route path="/join-now" element={<JoinNow />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       </Routes>
+        </PageShell>
         <Footer />
 
     </BrowserRouter>
