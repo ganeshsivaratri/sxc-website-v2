@@ -1,8 +1,10 @@
 .sxc-footer {
-  --plans-lime: #c5ff00;
-  --plans-dark: #101039;
+  --footer-lime: #d3fd51;
+  --footer-dark: #0b0e1b;
 
-  background: var(--plans-dark);
+  position: relative;
+  overflow: hidden;
+  background: var(--footer-dark);
   color: #ffffff;
   -webkit-font-smoothing: antialiased;
 }
@@ -13,7 +15,7 @@
   gap: 36px;
   max-width: 1320px;
   margin: 0 auto;
-  padding: 52px 5% 40px;
+  padding: 48px 5% 34px;
 }
 
 .sxc-footer__logo {
@@ -27,7 +29,7 @@
   margin: 0 0 8px;
   font-size: 17px;
   font-weight: 950;
-  color: var(--plans-lime);
+  color: var(--footer-lime);
 }
 
 .sxc-footer__about {
@@ -52,20 +54,50 @@
   font-weight: 1000;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--plans-lime);
+  color: var(--footer-lime);
+}
+
+.sxc-footer__col h3::after {
+  display: block;
+  width: 22px;
+  height: 3px;
+  margin-top: 7px;
+  border-radius: 2px;
+  background: var(--footer-lime);
+  content: '';
 }
 
 .sxc-footer__col a {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
   color: rgba(255, 255, 255, 0.85);
   font-size: 15px;
   font-weight: 600;
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, transform 0.2s ease;
   word-break: break-word;
 }
 
 .sxc-footer__col a:hover {
-  color: var(--plans-lime);
+  color: var(--footer-lime);
+  transform: translateX(3px);
+}
+
+.sxc-footer__contact-icon {
+  display: grid;
+  flex-shrink: 0;
+  width: 27px;
+  height: 27px;
+  place-items: center;
+  border-radius: 8px;
+  background: rgba(211, 253, 81, 0.12);
+  color: var(--footer-lime);
+}
+
+.sxc-footer__contact-icon svg {
+  width: 15px;
+  height: 15px;
 }
 
 .sxc-footer__bottom {
@@ -73,19 +105,55 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 8px 16px;
   max-width: 1320px;
   margin: 0 auto;
-  padding: 18px 5% 22px;
+  padding: 18px 5% 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.14);
   font-size: 13px;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.6);
 }
 
+.sxc-footer__bottom-right {
+  display: inline-flex;
+  align-items: center;
+  gap: 22px;
+}
+
 .sxc-footer__motto {
-  color: var(--plans-lime);
+  color: var(--footer-lime);
   font-weight: 800;
+}
+
+.sxc-footer__top {
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.85);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.sxc-footer__top:hover {
+  color: var(--footer-lime);
+}
+
+/* Giant soft wordmark cropped by the footer's bottom edge */
+.sxc-footer__watermark {
+  margin-top: 6px;
+  font-size: clamp(64px, 17.5vw, 240px);
+  font-weight: 950;
+  line-height: 0.78;
+  letter-spacing: -0.02em;
+  text-align: center;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.045);
+  transform: translateY(16%);
+  user-select: none;
+  pointer-events: none;
 }
 
 @media (max-width: 900px) {
@@ -98,11 +166,60 @@
   .sxc-footer__inner {
     grid-template-columns: 1fr;
     gap: 28px;
-    padding: 40px 5% 30px;
+    padding: 40px 5% 28px;
   }
 
   .sxc-footer__bottom {
     flex-direction: column;
     align-items: flex-start;
   }
+}
+
+/* Watermark — shrunk to a quiet sign-off (founder feedback) */
+.sxc-footer__watermark {
+  margin-top: 20px;
+  margin-bottom: 28px;
+  font-size: clamp(38px, 7.5vw, 88px);
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.05);
+  transform: none;
+}
+
+/* Footer — electric blue, matching the header (founder's call) */
+.sxc-footer {
+  background: #1800ff;
+}
+
+.sxc-footer__contact-icon {
+  background: #0b0e1b;
+}
+
+/* Footer polish — dark base band grounds the blue body */
+.sxc-footer__bottom {
+  max-width: none;
+  padding-inline: max(5%, calc((100vw - 1320px) / 2));
+  background: #0b0e1b;
+  border-top: none;
+}
+
+.sxc-footer__watermark {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 16px 0 30px;
+  background: #0b0e1b;
+  color: rgba(255, 255, 255, 0.05);
+}
+
+/* Footer — dark base band removed (founder's call), all blue */
+.sxc-footer__bottom {
+  max-width: 1320px;
+  padding-inline: 5%;
+  background: transparent;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.sxc-footer__watermark {
+  padding: 16px 0 28px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.05);
 }
