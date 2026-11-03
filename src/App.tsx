@@ -26,6 +26,7 @@ import JoinNow from './pages/JoinNow'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import RefundPolicy from './pages/RefundPolicy'
 import TermsAndConditions from './pages/TermsAndConditions'
+import Benefits from './pages/Benefits'
 import Footer from './components/Footer'
 import HomeCTA from './components/home/HomeCTA'
 
@@ -88,6 +89,7 @@ function App() {
 
         <Route path="/join-now" element={<JoinNow />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/student-benefits" element={<Benefits />} />
         <Route path="/refund-policy" element={<RefundPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
       </Routes>

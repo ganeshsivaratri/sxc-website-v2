@@ -20,6 +20,7 @@ const navigationLinks = [
   { label: 'Student Journey', href: '/student-journey' },
   { label: 'Projects', href: '/projects' },
   { label: 'Plans & Beyond', href: '/plans-beyond' },
+  { label: 'Student Benefits', href: '/student-benefits' },
 ]
 
 

@@ -134,9 +134,7 @@ function TermsAndConditions() {
             <li>
               <strong>Track B — SXC Idea / Live Product:</strong> the product
               is owned by SXC, and SXC bears the product costs. The student
-              team that builds it receives a 25% share of the product&apos;s
-              revenue for the first 2 years, and 10% for as long as the product
-              continues to run after that.
+              team that builds it receives a 20% share of the product&apos;s profit in the first year, and 10% of the profit in every year after that.
             </li>
           </ul>
           <p>
