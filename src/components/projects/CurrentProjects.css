@@ -623,3 +623,74 @@
     padding: 5px 7px;
   }
 }
+
+/* =====================================================
+   WHITE CARDS — founder direction, 2026-11-03
+   ===================================================== */
+
+.current-projects {
+  background: #ffffff;
+}
+
+.current-projects__heading > span {
+  color: #1805f5;
+}
+
+.current-projects__heading h2 {
+  color: #0b0e1b;
+}
+
+.project-card {
+  background: #ffffff;
+  border: 1px solid rgb(11 14 27 / 10%);
+  box-shadow: 0 14px 34px rgb(11 14 27 / 8%);
+  color: #0b0e1b;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 44px rgb(11 14 27 / 13%);
+}
+
+.project-card__category {
+  color: #1805f5;
+}
+
+.project-card__main h3 {
+  color: #0b0e1b;
+}
+
+.project-card__description {
+  color: rgb(11 14 27 / 68%);
+}
+
+.project-card__team,
+.project-card__users {
+  color: #0b0e1b;
+}
+
+.project-card__team span,
+.project-card__users span {
+  color: rgb(11 14 27 / 45%);
+}
+
+.project-card__highlights span {
+  background: #d3fd51;
+  color: #0b0e1b;
+}
+
+.project-card__footer {
+  border-top: 1px solid rgb(11 14 27 / 9%);
+  color: #0b0e1b;
+}
+
+.project-card__arrow {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #d3fd51;
+  color: #0b0e1b;
+}
