@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import heroCharacter from '../../assets/my-heroimg.png'
+import heroCharacter from '../../assets/my-heroimg.webp'
 import './HomeHero.css'
 
 const questions = [

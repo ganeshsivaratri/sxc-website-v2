@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-import logoImage from '../assets/sintrax-creations-logo.png'
+import logoImage from '../assets/sintrax-creations-logo.webp'
 
 import './Footer.css'
 

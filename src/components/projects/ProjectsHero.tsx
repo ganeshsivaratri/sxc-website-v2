@@ -1,4 +1,4 @@
-import heroImage from '../../assets/images/sxc-pointingdown.png'
+import heroImage from '../../assets/images/sxc-pointingdown.webp'
 import { useRef, useState } from 'react'
 import audioFile from '../../assets/Audio/why-projects-matter.mp3'
 import './ProjectsHero.css'

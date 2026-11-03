@@ -1,12 +1,12 @@
 
 import './StudentJourneySection3.css'
 
-import phase8Image from '../../assets/images/phase-8-project-review.png'
-import phase9Image from '../../assets/images/phase-9-project-deployment.png'
-import phase10Image from '../../assets/images/phase-10-students-gains.png'
-import phase11Image from '../../assets/images/phase-11-project-journey-archive.png'
-import phase12Image from '../../assets/images/phase-12-rejoin-program.png'
-import phase13Image from '../../assets/images/phase-13-internship-career.png'
+import phase8Image from '../../assets/images/phase-8-project-review.webp'
+import phase9Image from '../../assets/images/phase-9-project-deployment.webp'
+import phase10Image from '../../assets/images/phase-10-students-gains.webp'
+import phase11Image from '../../assets/images/phase-11-project-journey-archive.webp'
+import phase12Image from '../../assets/images/phase-12-rejoin-program.webp'
+import phase13Image from '../../assets/images/phase-13-internship-career.webp'
 
 const phases = [
   {

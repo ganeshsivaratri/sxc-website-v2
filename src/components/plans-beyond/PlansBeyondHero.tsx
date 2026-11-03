@@ -1,6 +1,6 @@
 
 import './PlansBeyondHero.css'
-import heroImage from '../../assets/images/planpointing.png'
+import heroImage from '../../assets/images/planpointing.webp'
 
 export default function PlansBeyondHero() {
   return (

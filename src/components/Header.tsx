@@ -6,7 +6,7 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
-import logoImage from '../assets/sintrax-creations-logo.png'
+import logoImage from '../assets/sintrax-creations-logo.webp'
 
 import './Header.css'
 

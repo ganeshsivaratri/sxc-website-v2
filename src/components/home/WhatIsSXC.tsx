@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import studentImage from '../../assets/images/sxc-student.png'
+import studentImage from '../../assets/images/sxc-student.webp'
 import './WhatIsSXC.css'
 
 function WebsiteIcon() {

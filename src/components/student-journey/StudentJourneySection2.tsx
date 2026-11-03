@@ -1,10 +1,10 @@
 
 import './StudentJourneySection2.css'
 
-import groupDiscussionImage from '../../assets/images/phase-4-group-discussion.png'
-import projectBeginsImage from '../../assets/images/phase-5-project-begins.png'
-import aiUsageImage from '../../assets/images/phase-6-ai-usage.png'
-import projectUpdationImage from '../../assets/images/phase-7-project-updation.png'
+import groupDiscussionImage from '../../assets/images/phase-4-group-discussion.webp'
+import projectBeginsImage from '../../assets/images/phase-5-project-begins.webp'
+import aiUsageImage from '../../assets/images/phase-6-ai-usage.webp'
+import projectUpdationImage from '../../assets/images/phase-7-project-updation.webp'
 
 const journeyPhases = [
   {

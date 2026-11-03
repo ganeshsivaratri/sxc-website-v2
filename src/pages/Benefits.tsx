@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 import './Benefits.css'
-import benefitsGuide from '../assets/images/benefits-scroll-guide.png'
-import certificateSample from '../assets/images/sxc-certificate-sample.png'
-import portfolioSample from '../assets/images/sxc-portfolio-sample.png'
+import benefitsGuide from '../assets/images/benefits-scroll-guide.webp'
+import certificateSample from '../assets/images/sxc-certificate-sample.webp'
+import portfolioSample from '../assets/images/sxc-portfolio-sample.webp'
 
 function Benefits() {
   return (

@@ -9,7 +9,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 /* Shared components */
 
 import Header from './components/Header'
-import { ScrollToTop, PageShell } from './components/PageEffects'
+import { ScrollToTop, PageShell, MetaManager } from './components/PageEffects'
 import BuildTicker from './components/home/BuildTicker'
 import InterviewPriority from './components/home/InterviewPriority'
 import VideoShowcase from './components/home/VideoShowcase'
@@ -43,6 +43,7 @@ function App() {
       {/* Shared website header */}
 
       <ScrollToTop />
+      <MetaManager />
       <Header />
 
       {/* Application routes */}

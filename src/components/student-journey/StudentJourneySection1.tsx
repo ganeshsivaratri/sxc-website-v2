@@ -1,9 +1,9 @@
 
 import './StudentJourneySection1.css'
 
-import joinSXCImage from '../../assets/images/join-sxc.png'
-import projectAllocationImage from '../../assets/images/phase-2-project-allocation.png'
-import learnStackImage from '../../assets/images/phase-3-learn-the-stack.png'
+import joinSXCImage from '../../assets/images/join-sxc.webp'
+import projectAllocationImage from '../../assets/images/phase-2-project-allocation.webp'
+import learnStackImage from '../../assets/images/phase-3-learn-the-stack.webp'
 
 const journeyPhases = [
   {

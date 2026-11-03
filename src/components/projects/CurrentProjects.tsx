@@ -45,7 +45,7 @@ export type Project = {
    ========================================================= */
 
 const projectImageFiles = import.meta.glob(
-  '../../assets/images/projects/**/*.png',
+  '../../assets/images/projects/**/*.webp',
   {
     eager: true,
     query: '?url',
@@ -142,32 +142,32 @@ export const projects: Project[] = [
 
     images: [
       {
-        src: image('sxcod1/image-1-main-app.png'),
+        src: image('sxcod1/image-1-main-app.webp'),
         title: 'Main B2B Marketplace',
         caption: 'Retailer and supplier marketplace experience.',
       },
       {
-        src: image('sxcod1/image-2-bulk-ordering.png'),
+        src: image('sxcod1/image-2-bulk-ordering.webp'),
         title: 'Product Details & Bulk Ordering',
         caption: 'Product variants, wholesale details and bulk order flow.',
       },
       {
-        src: image('sxcod1/image-3-negotiation.png'),
+        src: image('sxcod1/image-3-negotiation.webp'),
         title: 'Negotiation & Deal Management',
         caption: 'Communication and negotiation between business users.',
       },
       {
-        src: image('sxcod1/image-4-admin-dashboard.png'),
+        src: image('sxcod1/image-4-admin-dashboard.webp'),
         title: 'Admin Dashboard',
         caption: 'Platform administration and operational monitoring.',
       },
       {
-        src: image('sxcod1/image-5-business-analytics.png'),
+        src: image('sxcod1/image-5-business-analytics.webp'),
         title: 'Business Analytics',
         caption: 'Business performance and reporting overview.',
       },
       {
-        src: image('sxcod1/image-6-system-architecture.png'),
+        src: image('sxcod1/image-6-system-architecture.webp'),
         title: 'System Architecture',
         caption: 'Connected marketplace, inventory and dashboard ecosystem.',
       },
@@ -238,32 +238,32 @@ export const projects: Project[] = [
 
     images: [
       {
-        src: image('sxcod2/image-1-passenger-app.png'),
+        src: image('sxcod2/image-1-passenger-app.webp'),
         title: 'Passenger App',
         caption: 'Passenger ride discovery and booking experience.',
       },
       {
-        src: image('sxcod2/image-2-captain-app.png'),
+        src: image('sxcod2/image-2-captain-app.webp'),
         title: 'Captain App',
         caption: 'Captain availability and ride request experience.',
       },
       {
-        src: image('sxcod2/image-3-live-tracking.png'),
+        src: image('sxcod2/image-3-live-tracking.webp'),
         title: 'Live Ride Tracking',
         caption: 'Trip progress and location tracking.',
       },
       {
-        src: image('sxcod2/image-4-admindashboard.png'),
+        src: image('sxcod2/image-4-admindashboard.webp'),
         title: 'Admin Dashboard',
         caption: 'Ride operations and platform administration.',
       },
       {
-        src: image('sxcod2/image-5-captain-earnings.png'),
+        src: image('sxcod2/image-5-captain-earnings.webp'),
         title: 'Captain Earnings',
         caption: 'Earnings and trip performance overview.',
       },
       {
-        src: image('sxcod2/image-6-payments-withdrawals.png'),
+        src: image('sxcod2/image-6-payments-withdrawals.webp'),
         title: 'Payments & Withdrawals',
         caption: 'Payment and withdrawal workflows.',
       },
@@ -334,32 +334,32 @@ export const projects: Project[] = [
 
     images: [
       {
-        src: image('sxcod3/image-1-linker-mobile-app.png'),
+        src: image('sxcod3/image-1-linker-mobile-app.webp'),
         title: 'Linker Mobile App',
         caption: 'Mobile rewards dashboard and user experience.',
       },
       {
-        src: image('sxcod3/image-2-task-earning.png'),
+        src: image('sxcod3/image-2-task-earning.webp'),
         title: 'Task-Based Earning',
         caption: 'Tasks and reward earning experience.',
       },
       {
-        src: image('sxcod3/image-3-wallet-withdrawals.png'),
+        src: image('sxcod3/image-3-wallet-withdrawals.webp'),
         title: 'Wallet & Withdrawals',
         caption: 'Wallet balance, transactions and withdrawal flow.',
       },
       {
-        src: image('sxcod3/image-4-url-shortener.png'),
+        src: image('sxcod3/image-4-url-shortener.webp'),
         title: 'URL Shortener',
         caption: 'Create and manage short links.',
       },
       {
-        src: image('sxcod3/image-5-admin-dashboard.png'),
+        src: image('sxcod3/image-5-admin-dashboard.webp'),
         title: 'Admin Dashboard',
         caption: 'Link and platform administration.',
       },
       {
-        src: image('sxcod3/image-6-systemarchitecture.png'),
+        src: image('sxcod3/image-6-systemarchitecture.webp'),
         title: 'System Architecture',
         caption: 'High-level view of the connected systems.',
       },
@@ -430,32 +430,32 @@ export const projects: Project[] = [
 
     images: [
       {
-        src: image('sxcod4/image-1-dashboard-builder.png'),
+        src: image('sxcod4/image-1-dashboard-builder.webp'),
         title: 'Dashboard Builder',
         caption: 'Main workspace for creating dashboards.',
       },
       {
-        src: image('sxcod4/image-2-drag-drop-editor.png'),
+        src: image('sxcod4/image-2-drag-drop-editor.webp'),
         title: 'Drag & Drop Editor',
         caption: 'Arrange and resize dashboard components.',
       },
       {
-        src: image('sxcod4/image-3-theme-customisation.png'),
+        src: image('sxcod4/image-3-theme-customisation.webp'),
         title: 'Theme Customisation',
         caption: 'Personalise dashboard appearance.',
       },
       {
-        src: image('sxcod4/image-4-data-integrations.png'),
+        src: image('sxcod4/image-4-data-integrations.webp'),
         title: 'Data Integrations',
         caption: 'Connect APIs and external data sources.',
       },
       {
-        src: image('sxcod4/image-5-user-access-control.png'),
+        src: image('sxcod4/image-5-user-access-control.webp'),
         title: 'User Access Control',
         caption: 'Manage users, teams and permissions.',
       },
       {
-        src: image('sxcod4/image-6-deploy-and-share.png'),
+        src: image('sxcod4/image-6-deploy-and-share.webp'),
         title: 'Deploy & Share',
         caption: 'Publish and share dashboards.',
       },
@@ -527,32 +527,32 @@ export const projects: Project[] = [
 
     images: [
       {
-        src: image('sxcod5/image-1-college-memories-vision.png'),
+        src: image('sxcod5/image-1-college-memories-vision.webp'),
         title: 'College Memories Vision',
         caption: 'The platform concept and student memories experience.',
       },
       {
-        src: image('sxcod5/image-2-frontend-experience.png'),
+        src: image('sxcod5/image-2-frontend-experience.webp'),
         title: 'Frontend Experience',
         caption: 'Responsive interface direction.',
       },
       {
-        src: image('sxcod5/image-3-backend-engineering.png'),
+        src: image('sxcod5/image-3-backend-engineering.webp'),
         title: 'Backend Engineering',
         caption: 'Backend services, APIs and data architecture concept.',
       },
       {
-        src: image('sxcod5/image-4-target-audience.png'),
+        src: image('sxcod5/image-4-target-audience.webp'),
         title: 'Target Audience',
         caption: 'Initial reach target of 2,000 college students.',
       },
       {
-        src: image('sxcod5/image-5-technology-stack.png'),
+        src: image('sxcod5/image-5-technology-stack.webp'),
         title: 'Technology Stack',
         caption: 'Proposed technologies for the platform.',
       },
       {
-        src: image('sxcod5/image-6-team-community.png'),
+        src: image('sxcod5/image-6-team-community.webp'),
         title: 'Team & Community',
         caption: 'Student-led collaboration and community vision.',
       },
