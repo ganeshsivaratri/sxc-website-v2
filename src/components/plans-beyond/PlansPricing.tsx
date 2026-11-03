@@ -1,8 +1,10 @@
 
 import './PlansPricing.css'
+import { Link } from 'react-router-dom'
 
 type Plan = {
   name: string
+  joinPlan: string
   price: string
   description: string
   features: string[]
@@ -12,6 +14,7 @@ type Plan = {
 const individualPlans: Plan[] = [
   {
     name: 'SPARK',
+    joinPlan: 'plan-1',
     price: '2,199',
     description:
       'Start your journey with one real-world project. Build it, deploy it live, and create your own professional online presence.',
@@ -27,6 +30,7 @@ const individualPlans: Plan[] = [
   },
   {
     name: 'APEX',
+    joinPlan: 'plan-2',
     price: '2,999',
     featured: true,
     description:
@@ -48,6 +52,7 @@ const individualPlans: Plan[] = [
 const teamPlans: Plan[] = [
   {
     name: 'CREW',
+    joinPlan: 'team-a',
     price: '1,999',
     description:
       'For friends who want to grow together. Collaborate on one real-world project and build something meaningful as a team.',
@@ -61,6 +66,7 @@ const teamPlans: Plan[] = [
   },
   {
     name: 'CREW PLUS',
+    joinPlan: 'team-b',
     price: '2,599',
     featured: true,
     description:
@@ -133,10 +139,10 @@ function PricingCard({
         </ul>
       </div>
 
-      <a href="#contact" className="pricing-button">
+      <Link to={`/join-now?plan=${plan.joinPlan}`} className="pricing-button">
         <span>Choose {plan.name}</span>
         <span className="pricing-button-arrow">↗</span>
-      </a>
+      </Link>
     </article>
   )
 }
@@ -282,10 +288,10 @@ export default function PlansPricing() {
                 PER PROJECT
               </span>
 
-              <a href="#contact" className="rejoin-button">
+              <Link to="/join-now?plan=rejoin" className="rejoin-button">
                 <span>Rejoin SXC</span>
                 <span>↗</span>
-              </a>
+              </Link>
             </div>
           </article>
         </section>
@@ -353,9 +359,9 @@ export default function PlansPricing() {
             something you can proudly showcase.
           </p>
 
-          <a href="#contact" className="pricing-cta-button">
+          <Link to="/join-now" className="pricing-cta-button">
             JOIN SXC CREATIONS <span>↗</span>
-          </a>
+          </Link>
 
           <p className="pricing-cta-small">
             Have questions? We're here to guide you.
@@ -371,9 +377,9 @@ export default function PlansPricing() {
             className="pricing-footer-links"
             aria-label="Important information"
           >
-            <a href="/benefits">Our Benefits <span>↗</span></a>
+            <a href="/student-benefits">Our Benefits <span>↗</span></a>
             <a href="/refund-policy">Refund Policy <span>↗</span></a>
-            <a href="/terms">Terms & Conditions <span>↗</span></a>
+            <a href="/terms-and-conditions">Terms & Conditions <span>↗</span></a>
           </nav>
 
           <p className="pricing-footer-disclaimer">
