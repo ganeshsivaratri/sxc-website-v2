@@ -37,6 +37,7 @@ export default function JoinForm() {
   const [teamSize, setTeamSize] = useState('4')
   const [error, setError] = useState('')
   const [sent, setSent] = useState(false)
+  const [agreed, setAgreed] = useState(false)
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault()
@@ -45,6 +46,7 @@ export default function JoinForm() {
     if (name.trim().length < 3) return setError('Please enter your full name.')
     if (digits.length !== 10) return setError('Enter a valid 10-digit WhatsApp number.')
     if (college.trim().length < 3) return setError('Please enter your college name.')
+    if (!agreed) return setError('Please tick the box to agree to the Terms & Conditions and Refund Policy.')
 
     setError('')
 
@@ -78,7 +80,8 @@ export default function JoinForm() {
       `Hi, I'm ${name.trim()} from ${college.trim()} (${year} Year, ${branch}).\n` +
       `I want to join ${PLANS[plan].label} — ${PLANS[plan].price}.\n` +
       `Joining as: ${joinText}.\n` +
-      `My WhatsApp number: ${digits}`
+      `My WhatsApp number: ${digits}\n` +
+      `I agree to the Terms & Conditions and Refund Policy.`
 
     window.open(
       `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`,
@@ -203,6 +206,25 @@ export default function JoinForm() {
             </select>
           </label>
         )}
+
+        <label className="join-agree">
+          <input
+            type="checkbox"
+            checked={agreed}
+            onChange={(e) => setAgreed(e.target.checked)}
+          />
+          <span>
+            I have read and agree to the{' '}
+            <a href="/terms-and-conditions" target="_blank" rel="noreferrer">
+              Terms &amp; Conditions
+            </a>{' '}
+            and{' '}
+            <a href="/refund-policy" target="_blank" rel="noreferrer">
+              Refund Policy
+            </a>{' '}
+            of SintraX Creations.
+          </span>
+        </label>
 
         {error && <p className="join-form__error">{error}</p>}
 
