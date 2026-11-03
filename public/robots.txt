@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sxc.codpox.com/sitemap.xml
