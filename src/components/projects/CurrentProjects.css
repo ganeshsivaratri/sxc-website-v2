@@ -694,3 +694,7 @@
   background: #d3fd51;
   color: #0b0e1b;
 }
+
+.current-projects {
+  scroll-margin-top: 96px;
+}

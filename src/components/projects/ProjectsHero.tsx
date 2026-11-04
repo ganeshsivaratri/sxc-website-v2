@@ -30,7 +30,7 @@ export default function ProjectsHero() {
           </p>
 
           <div className="projects-hero-actions">
-            <a href="#projects" className="projects-primary-btn">
+            <a href="#current-projects" className="projects-primary-btn">
               Explore Projects <span>↗</span>
             </a>
 
