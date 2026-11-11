@@ -14,8 +14,8 @@
   display: inline-block;
   padding: 7px 14px;
   border-radius: 999px;
-  background: #d3fd51;
-  color: #0b0e1b;
+  background: var(--lime);
+  color: var(--dark);
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.14em;
@@ -23,7 +23,7 @@
 
 .benefits-page h1 {
   margin: 18px 0 0;
-  color: #0b0e1b;
+  color: var(--dark);
   font-size: clamp(34px, 5vw, 48px);
   font-weight: 800;
   letter-spacing: -0.02em;
@@ -31,7 +31,7 @@
 }
 
 .benefits-page h1 span {
-  color: #1805f5;
+  color: var(--brand);
 }
 
 .benefits-page__sub {
@@ -70,7 +70,7 @@
 
 .benefits-heading {
   margin: 6px 0 4px;
-  color: #0b0e1b;
+  color: var(--dark);
   font-size: clamp(26px, 4vw, 36px);
   font-weight: 800;
   letter-spacing: -0.02em;
@@ -78,7 +78,7 @@
 }
 
 .benefits-heading span {
-  color: #1805f5;
+  color: var(--brand);
 }
 
 .benefits-heading::after {
@@ -88,7 +88,7 @@
   height: 4px;
   margin: 14px auto 0;
   border-radius: 999px;
-  background: #d3fd51;
+  background: var(--lime);
 }
 
 .benefit-block {
@@ -105,7 +105,7 @@
 }
 
 .benefit-block--blue {
-  background: #1805f5;
+  background: var(--brand);
   box-shadow: 0 16px 36px rgb(24 5 245 / 22%);
 }
 
@@ -114,7 +114,7 @@
 }
 
 .benefit-block--lime {
-  background: #d3fd51;
+  background: var(--lime);
   box-shadow: 0 16px 36px rgb(11 14 27 / 10%);
 }
 
@@ -139,12 +139,12 @@
 }
 
 .benefit-block--blue .benefit-block__num {
-  background: #d3fd51;
-  color: #0b0e1b;
+  background: var(--lime);
+  color: var(--dark);
 }
 
 .benefit-block--lime .benefit-block__num {
-  background: #1805f5;
+  background: var(--brand);
   color: #ffffff;
 }
 
@@ -165,7 +165,7 @@
 }
 
 .benefit-block--lime h3 {
-  color: #0b0e1b;
+  color: var(--dark);
 }
 
 .benefit-points {
@@ -201,12 +201,12 @@
 }
 
 .benefit-block--blue .benefit-points li::before {
-  background: #d3fd51;
-  color: #0b0e1b;
+  background: var(--lime);
+  color: var(--dark);
 }
 
 .benefit-block--blue .benefit-points strong {
-  color: #d3fd51;
+  color: var(--lime);
 }
 
 .benefit-block--lime .benefit-points li {
@@ -214,12 +214,12 @@
 }
 
 .benefit-block--lime .benefit-points li::before {
-  background: #1805f5;
+  background: var(--brand);
   color: #ffffff;
 }
 
 .benefit-block--lime .benefit-points strong {
-  color: #0b0e1b;
+  color: var(--dark);
 }
 
 .benefit-stats {
@@ -252,7 +252,7 @@
 }
 
 .benefit-block--blue .benefit-stat strong {
-  color: #d3fd51;
+  color: var(--lime);
 }
 
 .benefit-block--blue .benefit-stat span {
@@ -264,7 +264,7 @@
 }
 
 .benefit-block--lime .benefit-stat strong {
-  color: #1805f5;
+  color: var(--brand);
 }
 
 .benefit-block--lime .benefit-stat span {
@@ -282,7 +282,7 @@
 }
 
 .benefit-block--lime .benefit-block__label {
-  color: #0b0e1b;
+  color: var(--dark);
 }
 
 .benefit-minis {
@@ -306,11 +306,11 @@
 
 .benefit-block--lime .benefit-minis span {
   background: rgb(11 14 27 / 9%);
-  color: #0b0e1b;
+  color: var(--dark);
 }
 
 .benefit-minis--rules span {
-  background: #1805f5 !important;
+  background: var(--brand) !important;
   color: #ffffff !important;
   font-weight: 800;
 }
@@ -322,7 +322,7 @@
 }
 
 .benefit-tagline strong {
-  color: #0b0e1b;
+  color: var(--dark);
 }
 
 .pf-mock {
@@ -354,11 +354,11 @@
 }
 
 .pf-mock__dot:nth-child(2) {
-  background: #1805f5;
+  background: var(--brand);
 }
 
 .pf-mock__dot:nth-child(3) {
-  background: #d3fd51;
+  background: var(--lime);
 }
 
 .pf-mock__bar em {
@@ -389,14 +389,14 @@
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: #1805f5;
+  background: var(--brand);
   color: #ffffff;
   font-size: 17px;
   font-weight: 800;
 }
 
 .pf-mock__hero strong {
-  color: #0b0e1b;
+  color: var(--dark);
   font-size: 18px;
 }
 
@@ -416,8 +416,8 @@
 .pf-mock__chips span {
   padding: 4px 10px;
   border-radius: 999px;
-  background: #d3fd51;
-  color: #0b0e1b;
+  background: var(--lime);
+  color: var(--dark);
   font-size: 11px;
   font-weight: 800;
 }
@@ -434,7 +434,7 @@
 }
 
 .pf-mock__project strong {
-  color: #0b0e1b;
+  color: var(--dark);
   font-size: 14.5px;
 }
 
@@ -449,8 +449,8 @@
   flex: 0 0 auto;
   padding: 5px 10px;
   border-radius: 999px;
-  background: #d3fd51;
-  color: #0b0e1b;
+  background: var(--lime);
+  color: var(--dark);
   font-size: 11px;
   font-weight: 900;
   letter-spacing: 0.06em;
@@ -467,7 +467,7 @@
   padding: 5px 11px;
   border-radius: 999px;
   border: 1px solid rgb(11 14 27 / 16%);
-  color: #0b0e1b;
+  color: var(--dark);
   font-size: 12px;
   font-weight: 700;
 }
@@ -484,7 +484,7 @@
 .pf-mock__contact span {
   padding: 7px 14px;
   border-radius: 999px;
-  background: #0b0e1b;
+  background: var(--dark);
   color: #ffffff;
   font-size: 12px;
   font-weight: 700;
@@ -542,7 +542,7 @@
 }
 
 .benefit-card--blue {
-  background: #1805f5;
+  background: var(--brand);
   box-shadow: 0 14px 32px rgb(24 5 245 / 20%);
 }
 
@@ -555,12 +555,12 @@
 }
 
 .benefit-card--lime {
-  background: #d3fd51;
+  background: var(--lime);
   box-shadow: 0 14px 32px rgb(11 14 27 / 10%);
 }
 
 .benefit-card--lime h3 {
-  color: #0b0e1b;
+  color: var(--dark);
 }
 
 .benefit-card--lime p {
@@ -583,7 +583,7 @@
   margin-top: 22px;
   padding: 26px;
   border-radius: 20px;
-  background: #d3fd51;
+  background: var(--lime);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -594,7 +594,7 @@
 
 .stipend-strip h3 {
   margin: 0 0 8px;
-  color: #0b0e1b;
+  color: var(--dark);
   font-size: 20px;
   font-weight: 800;
 }
@@ -608,14 +608,14 @@
 }
 
 .stipend-strip p strong {
-  color: #0b0e1b;
+  color: var(--dark);
 }
 
 .benefits-honest {
   margin-top: 22px;
   padding: 26px;
   border-radius: 20px;
-  background: #0b0e1b;
+  background: var(--dark);
 }
 
 .benefits-honest h3 {
@@ -639,7 +639,7 @@
 
 .benefits-cta h2 {
   margin: 0;
-  color: #0b0e1b;
+  color: var(--dark);
   font-size: clamp(26px, 4vw, 36px);
   font-weight: 800;
   letter-spacing: -0.02em;
@@ -647,7 +647,7 @@
 
 .benefit-cta h2 span,
 .benefits-cta h2 span {
-  color: #1805f5;
+  color: var(--brand);
 }
 
 .benefits-cta__actions {
@@ -673,14 +673,14 @@
 }
 
 .benefits-btn--primary {
-  background: #d3fd51;
-  color: #0b0e1b;
+  background: var(--lime);
+  color: var(--dark);
   box-shadow: 0 10px 24px rgb(11 14 27 / 14%);
 }
 
 .benefits-btn--ghost {
   border: 1.5px solid rgb(11 14 27 / 22%);
-  color: #0b0e1b;
+  color: var(--dark);
 }
 
 @keyframes benefits-rise {
@@ -785,5 +785,5 @@
 }
 
 .benefit-block--blue .benefit-tagline strong {
-  color: #d3fd51;
+  color: var(--lime);
 }
