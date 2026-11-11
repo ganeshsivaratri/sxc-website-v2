@@ -633,18 +633,18 @@
 }
 
 .current-projects__heading > span {
-  color: #1805f5;
+  color: var(--brand);
 }
 
 .current-projects__heading h2 {
-  color: #0b0e1b;
+  color: var(--dark);
 }
 
 .project-card {
   background: #ffffff;
   border: 1px solid rgb(11 14 27 / 10%);
   box-shadow: 0 14px 34px rgb(11 14 27 / 8%);
-  color: #0b0e1b;
+  color: var(--dark);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -654,11 +654,11 @@
 }
 
 .project-card__category {
-  color: #1805f5;
+  color: var(--brand);
 }
 
 .project-card__main h3 {
-  color: #0b0e1b;
+  color: var(--dark);
 }
 
 .project-card__description {
@@ -667,7 +667,7 @@
 
 .project-card__team,
 .project-card__users {
-  color: #0b0e1b;
+  color: var(--dark);
 }
 
 .project-card__team span,
@@ -676,13 +676,13 @@
 }
 
 .project-card__highlights span {
-  background: #d3fd51;
-  color: #0b0e1b;
+  background: var(--lime);
+  color: var(--dark);
 }
 
 .project-card__footer {
   border-top: 1px solid rgb(11 14 27 / 9%);
-  color: #0b0e1b;
+  color: var(--dark);
 }
 
 .project-card__arrow {
@@ -691,8 +691,8 @@
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background: #d3fd51;
-  color: #0b0e1b;
+  background: var(--lime);
+  color: var(--dark);
 }
 
 .current-projects {
