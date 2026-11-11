@@ -1,6 +1,6 @@
 /* =========================================
    FAKE VS REAL — SINTRAX CREATIONS
-   Bold site style: blue #1501F5 / lime #D3FD51 / ink black
+   Bold site style: blue #1501F5 / lime var(--lime) / ink black
    Side-by-side on ALL screens (mobile compact, micro-notes),
    VS badge straddling the middle seam
    ========================================= */
@@ -9,7 +9,7 @@
   --fvr-ink: #0a0e1c;
   --fvr-muted: #5c6675;
   --fvr-blue: #1501f5;
-  --fvr-lime: #d3fd51;
+  --fvr-lime: var(--lime);
   --fvr-red: #ff4d5e;
   --fvr-red-soft: #ffb3ba;
 

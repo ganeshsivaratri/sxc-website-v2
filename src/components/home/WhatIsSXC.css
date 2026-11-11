@@ -5,10 +5,10 @@
    ========================================== */
 
 .sxc-about {
-  --sxc-blue: #1805f5;
-  --sxc-lime: #d3fd51;
+  --sxc-blue: var(--brand);
+  --sxc-lime: var(--lime);
   --sxc-white: #ffffff;
-  --sxc-ink: #0b0e1b;
+  --sxc-ink: var(--dark);
 
   position: relative;
   width: 100%;

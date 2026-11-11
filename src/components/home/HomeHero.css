@@ -831,7 +831,7 @@
 
 /* Hero — palette dark, so it stands apart from the blue header */
 #home.home-hero {
-  background: #0b0e1b;
+  background: var(--dark);
 }
 
 /* =====================================================
@@ -846,15 +846,15 @@
   margin-bottom: 1.6rem;
   padding: 0.5rem 1.05rem;
   border-radius: 999px;
-  background: #d3fd51;
-  color: #0b0e1b;
+  background: var(--lime);
+  color: var(--dark);
 }
 
 .home-eyebrow__line {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #0b0e1b;
+  background: var(--dark);
 }
 
 .home-hero__visual::before {
@@ -866,7 +866,7 @@
   width: min(35vw, 580px);
   aspect-ratio: 1;
   border-radius: 50%;
-  background: #d3fd51;
+  background: var(--lime);
 }
 
 .home-speech {
@@ -917,15 +917,15 @@
   margin-bottom: 1.6rem;
   padding: 0.5rem 1.05rem;
   border-radius: 999px;
-  background: #d3fd51;
-  color: #0b0e1b;
+  background: var(--lime);
+  color: var(--dark);
 }
 
 .home-eyebrow__line {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #0b0e1b;
+  background: var(--dark);
 }
 
 .home-hero__visual::before {
@@ -937,7 +937,7 @@
   width: min(35vw, 580px);
   aspect-ratio: 1;
   border-radius: 50%;
-  background: #d3fd51;
+  background: var(--lime);
 }
 
 .home-speech {
@@ -988,11 +988,11 @@
 .home-hero__title {
   position: relative;
   z-index: 3;
-  color: #0b0e1b;
+  color: var(--dark);
 }
 
 .home-hero__title .text-lime {
-  color: #1805f5;
+  color: var(--brand);
 }
 
 .home-hero__description {
@@ -1004,11 +1004,11 @@
 .home-hero__benefits {
   position: relative;
   z-index: 3;
-  color: #0b0e1b;
+  color: var(--dark);
 }
 
 .home-benefit-check {
-  color: #0b0e1b;
+  color: var(--dark);
 }
 
 .home-hero__actions {
@@ -1017,12 +1017,12 @@
 }
 
 .home-button--outline {
-  border-color: #0b0e1b;
-  color: #0b0e1b;
+  border-color: var(--dark);
+  color: var(--dark);
 }
 
 .home-hero__tagline {
-  color: #0b0e1b;
+  color: var(--dark);
 }
 
 .home-speech {
