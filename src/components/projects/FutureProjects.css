@@ -371,11 +371,11 @@ section.locked-projects-section {
 }
 
 .locked-projects-section .locked-projects-heading > span {
-  color: #1805f5;
+  color: var(--brand);
 }
 
 .locked-projects-section .locked-projects-heading h2 {
-  color: #0b0e1b;
+  color: var(--dark);
 }
 
 .locked-projects-section .locked-projects-heading p {
@@ -389,16 +389,16 @@ section.locked-projects-section {
 }
 
 .locked-projects-section .locked-project-icon {
-  background: #d3fd51;
-  color: #0b0e1b;
+  background: var(--lime);
+  color: var(--dark);
 }
 
 .locked-projects-section .locked-project-code {
-  color: #1805f5;
+  color: var(--brand);
 }
 
 .locked-projects-section .locked-project-card h3 {
-  color: #0b0e1b;
+  color: var(--dark);
 }
 
 .locked-projects-section .locked-project-card p {
@@ -406,8 +406,8 @@ section.locked-projects-section {
 }
 
 .locked-projects-section .locked-project-label {
-  background: #d3fd51;
-  color: #0b0e1b;
+  background: var(--lime);
+  color: var(--dark);
 }
 
 
@@ -421,15 +421,15 @@ section.locked-projects-section {
   padding: 9px 16px;
   border-radius: 999px;
   background: rgb(24 5 245 / 7%);
-  color: #1805f5;
+  color: var(--brand);
   font-size: 14px;
   font-weight: 700;
 }
 
 .locked-projects-section .locked-project-card {
   position: relative;
-  background: #0b0e1b;
-  border: 1px solid #0b0e1b;
+  background: var(--dark);
+  border: 1px solid var(--dark);
   box-shadow: 0 18px 38px rgb(11 14 27 / 18%);
   text-align: center;
 }
@@ -438,7 +438,7 @@ section.locked-projects-section {
   position: absolute;
   top: 18px;
   right: 20px;
-  color: #d3fd51;
+  color: var(--lime);
 }
 
 .locked-projects-section .locked-project-icon {
@@ -448,8 +448,8 @@ section.locked-projects-section {
   height: 64px;
   margin: 10px auto 6px;
   border-radius: 50%;
-  background: #d3fd51;
-  color: #0b0e1b;
+  background: var(--lime);
+  color: var(--dark);
 }
 
 .locked-projects-section .locked-project-icon svg {
@@ -467,6 +467,6 @@ section.locked-projects-section {
 
 .locked-projects-section .locked-project-label {
   margin-inline: auto;
-  background: #d3fd51;
-  color: #0b0e1b;
+  background: var(--lime);
+  color: var(--dark);
 }
