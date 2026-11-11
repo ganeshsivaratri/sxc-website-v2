@@ -1,1 +1,51 @@
 @import "tailwindcss";
+
+/* =========================================================
+   SXC DESIGN TOKENS
+   The ONLY place the brand colours live.
+   Change a colour here — it changes on the whole site.
+   (The home hero keeps its own shades on purpose:
+   see --home-* in pages/Home.css.)
+   ========================================================= */
+
+:root {
+  --brand: #1805f5;
+  --lime: #d3fd51;
+  --dark: #0b0e1b;
+  --white: #ffffff;
+}
+
+/* Page-in animation — PageShell (components/PageEffects.tsx)
+   re-mounts this wrapper on every route change. */
+
+.page-shell {
+  animation: page-in 0.35s ease both;
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-shell {
+    animation: none;
+  }
+}
+
+/* Shown while a lazy page chunk is downloading. */
+
+.page-loading {
+  min-height: 50vh;
+  display: grid;
+  place-items: center;
+  font-weight: 600;
+  color: var(--brand);
+  background: var(--white);
+}
