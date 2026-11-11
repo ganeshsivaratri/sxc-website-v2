@@ -1,6 +1,6 @@
 .sxc-footer {
-  --footer-lime: #d3fd51;
-  --footer-dark: #0b0e1b;
+  --footer-lime: var(--lime);
+  --footer-dark: var(--dark);
 
   position: relative;
   overflow: hidden;
@@ -191,14 +191,14 @@
 }
 
 .sxc-footer__contact-icon {
-  background: #0b0e1b;
+  background: var(--dark);
 }
 
 /* Footer polish — dark base band grounds the blue body */
 .sxc-footer__bottom {
   max-width: none;
   padding-inline: max(5%, calc((100vw - 1320px) / 2));
-  background: #0b0e1b;
+  background: var(--dark);
   border-top: none;
 }
 
@@ -206,7 +206,7 @@
   margin-top: 0;
   margin-bottom: 0;
   padding: 16px 0 30px;
-  background: #0b0e1b;
+  background: var(--dark);
   color: rgba(255, 255, 255, 0.05);
 }
 

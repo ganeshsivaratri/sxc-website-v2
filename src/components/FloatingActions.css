@@ -21,7 +21,7 @@
   transform: translateY(-50%);
   padding: 6px 12px;
   border-radius: 999px;
-  background: #0b0e1b;
+  background: var(--dark);
   color: #ffffff;
   font-size: 12px;
   font-weight: 700;
@@ -46,7 +46,7 @@
 
 .floating-share {
   background: #ffffff;
-  color: #0b0e1b;
+  color: var(--dark);
   border: 1px solid rgb(11 14 27 / 12%);
   box-shadow: 0 12px 28px rgb(11 14 27 / 18%);
 }
@@ -57,8 +57,8 @@
 }
 
 .floating-whatsapp {
-  background: #d3fd51;
-  color: #0b0e1b;
+  background: var(--lime);
+  color: var(--dark);
   box-shadow: 0 12px 28px rgb(11 14 27 / 26%);
   text-decoration: none;
 }

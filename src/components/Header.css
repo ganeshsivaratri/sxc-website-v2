@@ -462,13 +462,13 @@
 
 /* Header — founder's exact palette (swatches, 2026-11-03) */
 .sxc-header {
-  background-color: #0b0e1b;
-  border-bottom: 3px solid #d3fd51;
+  background-color: var(--dark);
+  border-bottom: 3px solid var(--lime);
 }
 
 .sxc-header.solid,
 .sxc-header.scrolled {
-  background-color: #0b0e1b;
+  background-color: var(--dark);
 }
 
 /* Header restored to the original — founder's call */
