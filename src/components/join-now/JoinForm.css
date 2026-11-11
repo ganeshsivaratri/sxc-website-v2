@@ -172,12 +172,12 @@
   width: 18px;
   height: 18px;
   margin-top: 2px;
-  accent-color: #1805f5;
+  accent-color: var(--brand);
   cursor: pointer;
 }
 
 .join-agree a {
-  color: #1805f5;
+  color: var(--brand);
   font-weight: 600;
   text-decoration: underline;
 }
